@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <p>
+        상대경로 vs 절대경로
+            1. 상대경로 : 현재 문서(위치) 기준으로 상대적인 경로
+                1. ./ 또는 생략 : 현재 위치
+                2. ../             : 현재 위치의 상위 위치로 1번 이동
+                3. ../../          : 현재 위치의 상위 위치로 2번 이동
+                4. ../폴더명/파일명 : 현재 위치의 상위 위치로 1번 이동후 폴더 이동
+            2. 절대경로 : 모든 경로
+
+    </p>
+    <h1> 이미지 마크업 1. src 속성 </h1>
+    <!-- 상대 경로 -->
+    <img src="cat2972.jpg"/>                       <!-- 현재 위치 -->
+    <img src="../cat2972.jpg"/>                    <!-- 상위 위치 -->
+    <img src="../day03/cat2972.jpg"/>              <!-- 상위 위치내 폴더로 이동 -->
+
+    <!-- 절대 경로 1. 서버기준 2.로컬기준 -->
+        <!-- 1. http://127.0.0.1:5500/day02/4_%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%B0%8F%EB%8F%99%EC%98%81%EC%83%81.html -->
+            <!-- cmd ipconfig = 본인pc ip -->
+        <!-- 2. file:///C:/Users/tj-bu-703-01/Desktop/front/day03/cat2972.jpg -->
+    <!-- 로컬 기준 -->
+        <img src="file:///C:/Users/tj-bu-703-01/Desktop/front/cat2972.jpg">
+    <!-- 서버 기준 -->
+        <img src="http://192.168.30.186:5500/day02/cat2972.jpg">
+    <!-- http://192.168.30.186:5500/day02/4_이미지및동영상.html -->
+
+    <h1> 오디오 마크업 : 1. src="파일경로" 2. controls 3. autoplay(브라우저 정책 따라 X) 4.muted 음소거 </h1>
+        <audio src="../audiosample.mp3" controls autoplay></audio>
+
+    <h1> 비디오 마크업 </h1>
+        <video src="../videosample.mp4" controls autoplay muted></video>
+
+    <h1> 외부 멀티미디어 마크업 </h1> <!-- iframe =/ api -->
+    <h2> 유튜브 영상 </h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ft70sAYrFyY?si=LREKC0tiy7cozObZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h2> 구글 지도 </h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d791.429414944742!2d126.71992766964853!3d37.490988562352115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b7c4657c1fbbb%3A0x960379a8e77c411e!2z642U7KGw7J2A7Lu07ZOo7YSw7ZWZ7JuQ!5e0!3m2!1sko!2skr!4v1715136859687!5m2!1sko!2skr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>

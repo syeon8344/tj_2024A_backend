@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CGV 관람객 설문조사</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <table>
+        <td><img src="cgvlogo.png"/></td>
+        <th><h1>CGV 관람객 설문조사 </h1></th>
+    </table>
+    <hr/>
+    <form>
+    <p>
+    <ol>
+        <li>설문자의 이름은 무엇입니까? <br/>
+            <input type="text" placeholder="이름을 입력해주세요"/>
+        </li> <br/> <br/>
+        <li>설문자의 연령대를 골라주세요. <br/>
+            <input type="radio" name="agebracket"/> 20세 이하
+            <input type="radio" name="agebracket"/> 21~30세
+            <input type="radio" name="agebracket"/> 31~40세
+            <input type="radio" name="agebracket"/> 41~50세
+            <input type="radio" name="agebracket"/> 51~60세 이상
+        </li> <br/> <br/>
+
+        <li>설문자의 성별을 골라주세요. <br/>
+            <input type="radio" name="gender"/> 남
+            <input type="radio" name="gender"/> 여
+        </li> <br/> <br/>
+
+        <li>선호하시는 영화 장르를 모두 골라주세요. (중복선택 가능) <br/>
+            <input type="checkbox" name="favmoviegenre"/> 액션
+            <input type="checkbox" name="favmoviegenre"/> 코미디
+            <input type="checkbox" name="favmoviegenre"/> SF
+            <input type="checkbox" name="favmoviegenre"/> 드라마
+            <input type="checkbox" name="favmoviegenre"/> 스릴러
+        </li> <br/> <br/>
+
+        <li>주로 보시는 영화의 평균 러닝타임은? <br/>
+            <input type="radio" name="movruntime"> 2시간 미만
+            <input type="radio" name="movruntime"> 2시간 1분 ~ 2시간 30분
+            <input type="radio" name="movruntime"> 2시간 31분 이상
+        </li> <br/> <br/>
+
+        <li>영화를 보실 때 음식을 드시는 편인가요? <br>
+            <input type="radio" name="fb"> 매우그렇다
+            <input type="radio" name="fb"> 다소그렇다
+            <input type="radio" name="fb"> 보통이다
+            <input type="radio" name="fb"> 다소아니다
+            <input type="radio" name="fb"> 전혀아니다 
+        </li><br> <br>
+        
+        <li>영화관에 주로 무슨 요일에 오시나요? (중복 선택 가능) <br>
+            <input type="checkbox"> 월
+            <input type="checkbox"> 화
+            <input type="checkbox"> 수
+            <input type="checkbox"> 목
+            <input type="checkbox"> 금
+            <input type="checkbox"> 토
+            <input type="checkbox"> 일 
+        </li><br> <br>
+        
+        <li>영화관에 주로 혼자 오시나요? 아니라면 누구와 같이 오시나요? <br>
+            <input type="radio" name="who"> 혼자
+            <input type="radio" name="who"> 가족
+            <input type="radio" name="who"> 친구 
+        </li><br> <br>
+
+        <li>영화관에 남기고 싶은 말이 있으시다면 적어주세요. <br>
+            <textarea rows="8" cols="52"></textarea>
+        </li><br>
+    </ol>
+    </p>
+    <hr>
+
+    설문날짜/시간 <input type="datetime-local"> <br> <br>
+
+    <input type="submit" value="제출하기">
+    <input type="reset" value="지우기"> <br> <br>
+    </form>
+    <h3> 설문에 응해주셔서 감사드립니다! </h3>
+</body>
+</html>
