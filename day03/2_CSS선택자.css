@@ -1,0 +1,21 @@
+/* CSS주석 */
+
+/* 1. *선택자 */
+* {color:red;}
+
+/* 2. 마크업명 */
+h4 {color:gold;}
+
+/* 3. class속성 */
+.text1 {color:darkblue;}
+
+/* 4. id속성 */
+#text2 {color:darkcyan;}
+
+/* 5. 자손 선택자 */
+div h3 {color:aqua;}
+
+/* 6. 자식 선택자 */
+div > h3 {color:brown}
+
+div > #text3 {color:black}

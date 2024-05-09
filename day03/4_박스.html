@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='4_박스.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    
+    <!-- 마크업마다의 구역 형성 -->
+
+    <p> 문단 구역 </p>
+    <h4 class="box1"> 제목4 구역 </h4>
+    <div class="box2"> 박스 구역 </div>
+    <div class="box2"> 박스 구역 <img src="cat2972.jpg"/> </div>
+
+    <div class="box3">박스 구역 3</div>
+    <div class="box4">박스 구역 4</div>
+    <div class="box5">박스 구역 5</div>
+    <div class="box6">박스 구역 6</div>
+    
+    <ol>
+        <li>목록1</li>
+    </ol>
+
+    <table>
+        <tr><th>제목1</th></tr>
+    </table>
+
+    <form>
+        <input />
+    </form>
+
+    <!-- 
+        div(division) vs span
+            - 모든 마크업들은 CSS 기본적으로 적용된 상태
+                ex) h -> bold  ol -> margin
+            - div와 span은 CSS 기본값이 거의 없음
+
+            1. <div>
+                display : block; 한 줄 차지하게 배치
+                대표예시: div h p al ol
+                사이즈 적용 가능
+
+            2. <span>
+                display : inline; 한 줄에 포함되도록 배치
+                대표마크업: span, a, img
+                인라인-> 사이즈 적용 불가능
+
+                display : inline-block; 한 줄에 포함되는 배치 + 사이즈 적용 가능
+
+                display : none; 숨김처리
+    -->
+
+    <!--
+        <ol> <li> 글머리 지우기
+        .contents > li{
+        list-style-type: none;
+        }
+    -->
+    
+    <div> div 1 </div>
+    <div> div 2 </div>
+    <span> span 1 </span>
+    <span> span 2 </span>
+    <hr/>
+    <div> 글자1 <span class="s1">s1 inline</span> 글자2</div>
+    <div> 글자1 <span class="s2">s2 inline</span> 글자2</div>
+    <div> 글자1 <span class="s3">s3 inline</span> 글자2</div>
+    <div> 글자1 <span class="s4">s4 inline</span> 글자2</div>
+    <hr/>
+    <div> 글자1 <div class="s1">s1 inline</div> 글자2</div>
+    <div> 글자1 <div class="s2">s2 inline</div> 글자2</div>
+    <div> 글자1 <div class="s3">s3 inline</div> 글자2</div>
+    <div> 글자1 <div class="s4">s4 inline</div> 글자2</div>
+
+</body>
+</html>
