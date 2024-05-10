@@ -1,0 +1,35 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    list-style-type: none;
+    font-family: 'Malgun Gothic';
+}
+
+.boldltr {
+    font-weight: bold;
+}
+#footerbg {
+    background-color: #0c509e;
+    color: white;
+    padding: 30px;
+}
+
+#footer {
+    margin: 30px;
+    width: 1280px;
+
+}
+#bottomLogo {
+    width: 80px; height: 110px;
+}
+
+#bottomLogo_2 {
+    height: 40px;
+    display: inline-block;
+    margin: 0 0 10px 10px;
+}
+
+#siteInfo > ul > li {
+    margin: 10px 0;
+}
