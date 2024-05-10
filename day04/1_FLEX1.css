@@ -1,0 +1,61 @@
+
+/* 구역 사이즈를 안쪽여백 + 테두리 포함 */
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    border: 2px solid blue;
+    width: 100px;
+}
+
+/* 1. flexbox1 */
+.flexbox1 {
+    border: 3px solid red;
+    display: flex;             /* 하위요소들의 배치방법 설정 : 기본값 가로배치 */
+    flex-wrap: nowrap;         /* 기본값 : 줄바꿈 안함, 자식요소들 한줄 표시하되 사이즈들 자동변경(줄임) */
+    width: 250px;
+}
+
+.flexbox2 {
+    border: 3px solid red;
+    display: flex;
+    flex-wrap: wrap;            /* 자식요소들 크기가 크면 자동 줄바꿈 */
+    width: 250px;
+}
+
+.flexbox3 {
+    border: 3px solid red;
+    display: flex;   
+    flex-wrap: wrap-reverse;    /* 뒤집어서 정렬 */  
+    width: 250px;
+}
+
+.flexbox4 {
+    border: 3px solid red;
+    display: flex;
+    width: 250px;
+    flex-direction: row;        /* 배치 방향 : row(기본값) 가로배치 > 가로 메뉴 바 등 */
+}
+
+.flexbox5 {
+    border: 3px solid red;
+    display: flex;
+    width: 250px;
+    flex-direction: column;        /* 배치 방향 : column 세로배치 > 사이드바 메뉴 등 */
+}
+
+
+.flexbox6 {
+    border: 3px solid red;
+    display: flex;
+    width: 250px;
+    flex-direction: row-reverse;        /* 배치 방향 : row-reverse 역순 가로배치 */
+}
+
+.flexbox7 {
+    border: 3px solid red;
+    display: flex;
+    width: 250px;
+    flex-direction: column-reverse;        /* 배치 방향 : column-reverse 역순 세로배치 */
+}
