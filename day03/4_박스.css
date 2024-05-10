@@ -22,7 +22,7 @@ body {border : 1px solid blue}
     /* 구역 안 컨텐츠 정렬 */
     text-align: center;
 
-    /* 구역 사이즈 width 가로  height 세로 */
+    /* 구역 사이즈 width 가로  height 세로 img td th table div 등등*/
     width: 300px ;
     height: 300px ;
 }   
@@ -67,7 +67,7 @@ form > input { width: 300px; height: 100px }
     box-sizing: border-box;         /* 200px (테두리, 안쪽 여백 포함) */
     padding: 10px;
 
-    /* **구역 가운데 정렬** */
+    /* **구역 가운데 정렬** > width 100%일때는 X 변경필요 */
     margin: 0 auto;
 
     /* 구역 내 컨텐츠 정렬 */

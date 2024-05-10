@@ -1,0 +1,44 @@
+body{
+    width: 500px;
+    text-align: center;
+    
+}
+
+ul , h4{
+    border: 3px solid gray;
+}
+
+li{
+    list-style-type: none;
+}
+
+.icon{
+    width: 30px;
+    
+    
+}
+.fblogin{
+    margin-bottom: 0px;
+}
+.loginletter{
+    color: blue;
+    font-weight: bold ;
+    vertical-align: 8px;
+    
+    
+    
+
+}
+.forgotpassword{
+    margin: 30px;
+    color: blue;
+}
+.registerbox{
+    padding: 30px;
+    font-weight: normal;
+}
+.register{
+    color: skyblue;
+    font-weight: bold;
+}
+

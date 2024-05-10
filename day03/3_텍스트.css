@@ -32,7 +32,7 @@
 
 #writer{
     text-align: center;                           /* 텍스트/컨텐츠 가로 정렬: left(기본값)/center/right */
-    text-decoration: overline underline aqua;   /* 텍스트 선긋기 underline 밑줄 overline 윗줄 line-through 취소선 */
+    text-decoration: overline underline aqua;   /* 텍스트 선긋기 underline 밑줄 overline 윗줄 line-through 취소선 (text-decoration 취소선 vs <del>) */
     text-shadow: 3px -3px 3px grey;             /* 텍스트 그림자 1. 좌우 -+ 2. 상하 -+ 3. 뿌옇게 */
 
     color: blue;                                 /* 1. 색상이름 2. 헥사코드(16진수) 3. RGB색상 (255,255,255) */
