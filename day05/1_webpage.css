@@ -1,0 +1,181 @@
+/*
+    협업시 공통(모든페이지 같이 적용할 CSS)
+    1. 웹페이지 컨텐츠의 크기 -> 전체 크기 등 (PC: 1000~1300px 등)
+    2. 폰트
+    3. 색상 테마
+    4. 레이아웃
+*/
+
+/*기본 CSS 설정*/
+*{
+    font-family: "고딕";
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+li { list-style-type: none; }
+a{ text-decoration: none; color: black; }
+
+/*헤더*/
+#header {
+    width: 1280px; margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    
+}
+
+.headerlogo {
+    height: 100%
+}
+
+.headermenu2 {
+    font-weight: bold;
+    font-size: 20px;
+    word-spacing: 90px;
+    margin-top: 10px;
+}
+/*이미지 가운데정렬  
+    1. display: block; margin: 0 auto;
+    2. <img  id="##" /> ### { background-image: url("img/main_bg.img"); background-repeat: no-repeat}
+*/
+
+/*본문*/
+#mainbannerbg {
+    border-top: 3px solid #d2d1ce;
+    border-bottom: 3px solid #d2d1ce;
+    margin-bottom: 30px;
+    
+}
+
+#mainbanner {
+    display: block;
+    margin: 0 auto;
+
+}
+
+#main {
+    width: 1280px; margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+    /*왼쪽메뉴*/
+.leftmenu {
+    width: 250px;
+}
+
+.searchbox {
+    box-shadow: -1px -1px black;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.searchbutton {
+    background-color: #f0f0f0;
+    width: 50px; height: 30px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+.leftmenu > ul > li {
+    padding: 10px;
+}
+
+.leftmenutitle {
+    background-color: #0ca9a2;
+    color: white;
+}
+
+.leftmenusub {
+    font-weight: bold;
+    border-top: 2px solid black;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+    /*가운데메뉴*/
+.centermenu {
+    display: flex;
+}
+
+.centermenu > ul {
+    width: 500px;
+}
+
+.centermenu > ul > li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.centermenu > ul > li > h2{
+    padding-bottom: 5px;
+}
+
+.centermenusub {
+    border-bottom: 2px solid black;
+    margin-top: 0;
+}
+
+.centermenusub > h2 {
+    margin-top: 0;
+}
+
+.centermenusub2 {
+    border-bottom: 2px solid black;
+}
+
+.centermenusub2 > h2 {
+    margin-top: 30px
+}   
+
+    /*오른쪽메뉴*/
+.rightmenu > h2 {
+    padding-bottom: 5px;
+    border-bottom: 3px solid black;
+}
+.rightmenu > ul {
+    display: flex;
+    flex-wrap: wrap;  /*자식요소들이 부모요소보다 커지면 줄바꿈처리*/
+    width: 500px;
+}
+
+.rightmenu > ul > li {
+    width: 200px;
+    margin: 20px;
+}
+
+.rightmenu > ul > li > a {
+    display: block;
+}
+
+/*푸터*/
+#footerbg {
+    background-color: #05344e;
+}
+
+#footer {
+    width: 1280px; margin: 20px auto; margin-bottom: 0;
+
+    color: white;
+    padding: 20px;
+}                             /* margin: 0 auto; (구역을 정렬) vs text-align: center; (내용을 정렬) */
+
+.footermenu1 {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.footermenu1 > li {
+    margin-right: 50px;
+}
+.footermenu1 > li > a {
+    color: white;
+}
+.footermenu2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.footermenu2 > li> h4 {
+    padding-bottom: 5px;
+}
