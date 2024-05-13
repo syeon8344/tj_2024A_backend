@@ -1,0 +1,200 @@
+/* 레이아웃 확인 용 */
+/* *{border: 1px solid red;} */
+
+
+*{  box-sizing: border-box;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;    
+    font-family: 'S-CoreDream-3Light';
+}
+a{ text-decoration: none; color: black;}
+
+h2 { font-weight: 500; }
+
+#header{
+    width: 1280px; 
+    margin: 0 auto;
+}
+/*========== 헤더 =============*/
+#header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;  
+}
+#topMenu{
+    display: flex;
+    justify-content: flex-end;
+}
+#topMenu>li{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "맑은 고딕" ;
+    margin-right: 30px;
+}
+
+#rigthside>a{
+    display: flex;
+    justify-content: flex-end; 
+    font-size: 13px;
+    padding: 0px 15px 0px 0px;
+    font-family: "맑은 고딕" ;
+    color: #636363;
+}
+
+/*========== 본문 =============*/
+
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.redltr {
+    font-size: 12px;
+    color:#dd0b15;
+}
+
+#main {
+    width: 1580px;
+    margin: 0 auto;
+}
+#main_section, #main_section_2 {
+    display: flex;
+    justify-content: space-between;
+}
+.brand_menu, .news_menu {
+    width: 1280px;
+    margin: 0 auto;
+}
+#mainbg_top {
+    background-color: #f7f7f7;
+    border-top: 1px solid #dddddd;
+}
+
+.prevbtn, .nextbtn {
+    font-size: 12px;
+    background: none;
+}
+.prevbtn{
+    text-align: left;
+}
+
+.nextbtn{
+    text-align: right;
+}
+
+.main_title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+#mainbnr {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.prevbtn, .nextbtn {
+    width: 70px; height: 38px;
+    margin-top: 150px;
+    border: 0;
+    border-bottom: 3px solid black;
+}
+.brand_section, .news_section {
+    margin-bottom: 50px;
+}
+.brand_menu, .news_menu {
+    display: flex;
+    justify-content: space-between;
+    height: 307px;
+}
+
+.brand_menu > li {
+    width: 310px;
+}
+
+.news_menu > li {
+    width: 307px;
+}
+
+.logo_bg {
+    text-align: center;
+    padding-top: 46.5px;
+    background-color: #ebebeb;
+    width: 310px; height: 165px;
+}
+
+.logo_bg > img {
+    width: 60%;
+}
+
+.main_cont_bg {
+    background-color: #ffffff;
+    padding: 20px;
+}
+#mainbg_btm {
+    background-color: #252525;
+    background-image: url(과제img/mainbnr2.png);
+    background-repeat: no-repeat;
+    width: 100%; height: 407px;
+    background-position: center;
+}
+
+.news_img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.inquiry {
+    width: 1280px;
+    margin: 0 auto;
+    padding-top: 120px;
+    color: white;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.inquirybtn {
+    width: 210px; height: 70px;
+    margin-top: 30px;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    background: none;
+}
+/*========== 푸터 =============*/
+#ftBack{ background-color: #363636;}
+#footer{
+    width: 1280px;
+    margin: 0 auto;
+    color: #d9d9d9;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    align-items: center;
+    padding: 20px 0;
+}
+#footer h3{ 
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 13px;
+    }
+#footer > ul > li{
+    padding: 3px 0;
+}
+#footer > ul > li > a{
+    color: #d9d9d9;
+}
+#familyBtn{
+    width: 250px; height: 50px;
+    font-size: 16px;
+    color: #d9d9d9;
+    background-color: #363636;
+    border-color: #d9d9d9;
+    padding: 5px;
+    margin-right: 10px;
+}
