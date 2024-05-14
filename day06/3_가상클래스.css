@@ -1,0 +1,50 @@
+* {list-style-type: none;}
+
+a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 가상 클래스 */
+a:hover {color: orange;}
+a:active {color: blue;}
+a:visited {color: chartreuse;}
+
+/*
+    선택자 :hover > 마우스를 올렸을 때
+    선택자 :active > 마우스로 클릭했을 때
+    선택자 :visited > 링크 방문한 적 있을 때 (브라우저 방문 기록)
+*/
+
+#header {background-color: beige;}
+#header > ul { display: flex; justify-content: center;}
+#header > ul > li {list-style-type: none; padding: 20px; position: relative;}
+
+#header .subMenu {
+    position: absolute;
+    top: 60px;
+    padding: 0; width: 100px;
+    display: none;
+}
+
+/* li에 마우스를 올렸을 때 서브메뉴가 보이도록 하기 */
+#header > ul > li:hover .subMenu {
+    display: block;
+    background-color: cyan;
+}
+
+
+#header2 {background-color: beige; position: relative; }
+#header2 > ul {display: flex; justify-content: center;}
+#header2 > ul > li {list-style-type: none; padding: 20px; position: relative;}
+
+#header2 .subMenu2 {
+    position: absolute; top: 60px;
+    padding: 0; width:100%;
+    background-color: beige;
+    display: none;
+}
+#header2 > ul:hover .subMenu2{
+    display: block;
+}
