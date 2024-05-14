@@ -1,65 +1,217 @@
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
 * {                                 /*공통 CSS*/
-    border: 1px solid red;
     box-sizing: border-box;
     margin: 0; padding: 0;
     font-size: 12px;
+    font-family: "Noto Sans KR";
 }
+
+*:focus {outline:none;}
 a { color: black; text-decoration: none;}
 li { list-style-type: none; }
+.redltr {color:rgb(231, 0, 0);}
 
-#header1 {width: 100%; height: 44px;}
+#fixedSidemenu {
+    position: fixed;
+    top: 100px; right: 0px;
+    background-color: #fafafa;
+
+}
+
+#fixedSidemenu > ul > li {
+    border: 1px solid #dbdbdb;
+    width: 48px; height: 44px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#fixedSidemenu > ul > li > a {
+    width: 100%; height: 100%;
+}
+
+#fixedSidemenu > ul > li > span {
+    position: absolute;
+    top:10px; right: 50px;
+    width: 80px; height: 20px;
+
+    background-color: black; 
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    display: none;
+}
+
+#fixedSidemenu > ul > li:hover > span {
+    display: block;
+}
+
+.smIcons {
+    width: 20px;
+}
+
+.smButtons > ul > li {
+    border: 1px solid #dbdbdb;
+    width: 48px; height: 35px;
+    padding: 10px;
+}
+
+
+#header1 {width: 100%; height: 44px;
+border-bottom: 1px solid silver;}
 
 #header1, #header2 {background-color: white;}
 
 #header1 > ul {
+    height: 44px;
     display: flex;
     justify-content: right;
-    padding: 10px;
+    align-items: center;
+    padding: 0 10px;
 }
 
 .topAd {
-    background-color: yellow;
+    background-color: rgb(247, 247, 122);
+    height: 42px;
     margin-right: 10px;
+    padding-top: 14px;
+    font-weight: bold;
 }
 
 #header1 > ul > li> span {
     margin: 10px;
 }
 
-#header2 {
-    display: flex;
-    position: sticky; top: 0;
-    padding: 15px;
-    padding-left: 45px;
+#header2 {                                      /* sticky 사용조건                                      */
+    display: flex;                              /*    1. sticky : 상위 부모의 높이 사이즈 안에서 고정     */
+    flex-wrap: wrap;                            /*     vs fixed : 특정 요소와 상관없이 디바이스 좌표 고정 */
+    position: sticky; top: 0;                   /*    2. top, right, left, bottom 위치 속성 1개이상 필수 */
+    padding: 0 40px;                            /*    3. 부모요소가 overflow 속성 사용금지               */
+    align-items: center;                        /*   #header2 부모 : wrap                              */
 }
- 
+
 .topLogo {
-    margin-right: 30px;
-    height: 20px;
+    margin-right: 18px;
+}
+.topLogo > img {
+    width: 155.19px; height: 20px;
 }
 
 #header2 > ul {
     display: flex;
-}
-
-.searchBtn {
-    position: absolute;
-    right: 21px;
+    vertical-align: middle;
+    width: 70%
 }
 
 #header2 > ul > li {
-    margin-right: 10px;
+    display: flex;
+    width: 75px; height: 75px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 #header2 > ul > li > ul {
+
     display: none;
 }
 
 #header2 > ul > li:hover > ul {
     display: block;
+    position: absolute;
+    width: 150%;
+    top: 75px;
+    background-color: white;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+#header2 > ul > li:hover > ul > li {
+    margin: 10px 0;
+
+}
+.search {
+    width: 160px;
+    display: flex;
+}
+
+.search > a {
+    display: inline;
+    border-bottom: 1px solid;
+}
+.searchBtn {
+    border: 0;
+    border-bottom: 1px solid;
+}
+.searchIcon {
+    display: inline;
+    height: 20px;
 }
 
 
+
+
+
+#mainBg {
+    width: 100%;
+}
 #mainContent { width: 1600px; margin: 0 auto; }
 
-#footer { width: 100%; }
+    .todayBest, .categoryBest { width: 1200px; margin: 0 auto; text-align: center;}
+
+    .mainTitle {margin-top: 200px;}
+    .mainTitle > h2 { font-size: 18px; margin: 20px 0;}
+    .mainTitle > p { color: silver; font-weight: 100; margin-bottom: 40px;}
+
+    .categoryMenu {margin-bottom: 40px;}
+    .categoryMenu > ul { display: flex; justify-content: center;}
+
+    .categoryMenu > ul > span {color: silver;}
+
+    .categoryMenu > ul > li {width:160px; }
+
+    .categoryMenu > ul > li > a {font-weight: bold; color: silver;}
+    .categoryMenu > ul > li > a:hover {font-weight: bold; color: black; text-decoration: underline 2px;}
+
+    .items {display: flex; margin-bottom: 50px;}
+
+    .iteminfo {text-align: start;}
+    .item {width: 380px; margin: 0 10px;}
+    .item > img {width: 100%;}   /* 부모요소 기준 % */
+
+    .colorReview {display: flex; justify-content: space-between; margin: 10px 0;}
+    .color > span { display: inline-block; width: 10px; height: 10px; border: 1px solid #dbdbdb;}
+
+    .review {text-align: right; color:silver;}
+
+    .itemName > .size {color: silver;}
+    .itemName > .bigsize {color: crimson}
+
+
+
+
+
+#footer1Bg { width: 100%; background-color: #f7f7f7;}
+
+#footer1 { width: 1400px; margin: 0 auto;}
+
+#footer1 > ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+#footer1 > ul > li {
+margin: 50px 0;
+}
+#footer1 > ul > li > h2 {
+    font-size: 16px; margin: 10px 0;
+}
+
+.bigltr {font-size: 24px; margin: 10px 0; }
+#footer2 {
+    text-align: center;
+    color: #b1a7a1;
+    line-height: 160%;
+    margin: 40px 0;
+}
