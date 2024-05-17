@@ -34,15 +34,20 @@
             여러 줄 주석 : /* */
         
         JS 입출력
+
             - 출력
             1. console.log( )             = 개발자 콘솔에 출력
             2. alert( )                   = 브라우저에 알림메시지창에 출력
             3. document.write( )          = 현재 HTTML에 출력
-            4. documnet.마크업명.innerHTML = 특정 HTML 마크업에 출력
+            4. document.마크업명.innerHTML = 특정 HTML 마크업에 출력 (문자 데이터만)
+            *** document.querySelector('#id' 또는 '.class').innerHTML = 특정 id 또는 class에 출력
+
             - 입력
-            1. confirm( )                                : 브라우저에 알림메시지창 (0)
-            2. promft( )                                 : 브라우저에 알림메시지창
-            3. document.queryselector('선택자').innerHTML : 특정 HTML에 작성된 content 가져오기
+            1. let 저장변수 = confirm( )                                : 브라우저에 알림메시지창 + T/F
+            2. let 저장변수 = promft( )                                 : 브라우저에 알림메시지창 + input박스
+            4. let 저장변수 = document.마크업명.innerHTML                : 특정 HTML 마크업을 저장
+            5. let 저장변수 = document.querySelector('#id' 또는 '.class').innerHTML : 특정 id 또는 class 값의 처음 요소를 저장
+
     -->
 
     <!-- JS 코드 시작 -->

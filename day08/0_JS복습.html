@@ -1,0 +1,101 @@
+<!--
+    JS 입출력
+
+    - 출력
+    1. console.log( )             = 개발자 콘솔에 출력
+    2. alert( )                   = 브라우저에 알림메시지창에 출력
+    3. document.write( )          = 현재 HTTML에 출력
+    4. document.마크업명.innerHTML = 특정 HTML 마크업에 출력 (문자 데이터만)
+    *** document.querySelector('#id' 또는 '.class').innerHTML = 특정 id 또는 class에 출력
+
+    - 입력
+    1. let 저장변수 = confirm( )                                : 브라우저에 알림메시지창 + T/F
+    2. let 저장변수 = promft( )                                 : 브라우저에 알림메시지창 + input박스
+    4. let 저장변수 = document.마크업명.innerHTML                : 특정 HTML 마크업을 저장
+    5. let 저장변수 = document.querySelector('#id' 또는 '.class').innerHTML : 특정 id 또는 class 값의 처음 요소를 저장
+
+    - 변수 : 변하는 값
+        - 컴퓨터 : 데이터 1개 저장할 수 있는 메모리 공간, 이름 존재
+        - 데이터를 변경할 수 있다
+        - 선언 키워드 : let
+
+
+    - 상수 : 변하지 않는 값
+        - 컴퓨터 : 데이터 1개 저장할 수 있는 메모리 공간, 이름 존재
+        - 데이터를 변경할 수 없다
+        - 선언 키워드 : const
+
+    - 배열
+        - 순서대로 번호가 붙은 데이터들이 연속적인 형태로 구성된 구조
+        - 순서대로 붙은 번호 : 첨자 / index, 중복된 데이터 식별
+        -      [1,2,1,1,2,4] 
+        - index 0 1 2 3 4 5
+        - 인덱스 개수/길이 : 데이터 개수의 n-1개
+    
+        - 배열 호출
+            - 전체 호출: 변수명
+            - 특정 데이터 호출: 변수명[인덱스번호]
+        - 배열 수정
+            - 전체 수정: 변수명 = [새로운 배열]
+            - 특정 인덱스 내 데이터 수정: 변수명[인덱스번호] = 새로운데이터
+
+    --- 배열과 관련된 라이브러리 함수
+
+        - 배열 내 데이터 추가
+            - 변수명.push(data)
+        - 배열 내 특정 데이터 삭제
+            - 변수명.splice(인덱스, 삭제개수) : 특정 인덱스부터 n개 삭제
+            - 변수명.splice(인덱스, 삭제개수, '새로운데이터') : 특정 인덱스에 새로운 데이터 삽입 (한칸씩 밀려남)
+        - 배열 내 데이터의 인덱스 찾기
+            - 변수명.indexOf(찾을데이터) : 있으면 인덱스 번호 반환, 없으면 -1
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+
+
+    <script>
+
+        //예제 1: 2개의 문자를 입력받아 HTML 출력하시오
+    
+    //let word1 = prompt('word1: ');
+    //let word2 = prompt('word2: ');
+    //document.write (word1, word2);
+    
+    
+        //예제 2: 국어, 영어, 수학 점수 입력prompt() 받아 배열변수에 각 점수를 저장하여 HTML(li)형식으로 출력하시오.
+
+    let score1 = prompt('국어점수: ');
+    let score2 = prompt('영어점수: ');
+    let score3 = prompt('수학점수: ');
+
+    let scorelist = [score1, score2, score3];
+
+    console.log(scorelist)
+
+    document.write("<ol>")
+
+    document.write("<li>"); document.write(scorelist[0]); document.write("</li>")
+    document.write("<li>" + scorelist[1] + "</li>")
+    document.write(`<li>${scorelist[2]}</li>`)  // ${변수} = value
+
+    document.write("</ol>")
+
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
