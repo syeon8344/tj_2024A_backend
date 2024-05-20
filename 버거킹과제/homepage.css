@@ -16,13 +16,36 @@ a { text-decoration: none; color: black;}
 
 
 
-/**/
+/* width: 1184px; padding: 0 20px; */
 
 /*헤더*/
-#header {display: flex;}
+#headerBg { width: 100%; background-color: white;}
+#header {
+    display: flex; justify-content: space-between;
+    width: 1184px; height: 120px;
+    margin: 0 auto; padding: 0 20px; padding-top: 24px;
+    text-align: center;
+    align-items: center;
+}
+#header li {text-align: left;}
 
-#headerMenu {display: flex;}
+#topLogo > a {display: block;}
 
+#headerMenu {display: flex; position:relative;}
+#headerMenu > li { width:156.35px; font-size: 26px; padding: 10px 0 0 0;}
+
+#hiddenMenu {display: none;}
+#hiddenMenu > ul {width:156.35px;}
+#headerMenu:hover > ul {display: flex; position: absolute; top: 80px; text-align: left;}
+
+#franchiseBtn, #deliveryBtn { 
+    font-size: 24px;
+    width:168px; height:50px; 
+    border-radius: 25px; 
+}
+#franchiseBtn > a, #deliveryBtn > a { color: white;}
+#franchiseBtn {background-color: #502416;}
+#deliveryBtn {background-color: #d72300;}
 
 /*본문*/
 
