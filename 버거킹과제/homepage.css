@@ -19,27 +19,53 @@ a { text-decoration: none; color: black;}
 /* width: 1184px; padding: 0 20px; */
 
 /*헤더*/
-#headerBg { width: 100%; background-color: white;}
+#headerBg {position: sticky; top: 0; box-shadow: 0px 5px 3px rgba(44, 44, 44, 0.1);}
+#headerBg { width: 100%; height:120px;background-color: white;}
+
 #header {
     display: flex; justify-content: space-between;
     width: 1184px; height: 120px;
     margin: 0 auto; padding: 0 20px; padding-top: 24px;
-    text-align: center;
     align-items: center;
+
 }
 #header li {text-align: left;}
 
 #topLogo > a {display: block;}
 
-#headerMenu {display: flex; position:relative;}
-#headerMenu > li { width:156.35px; font-size: 26px; padding: 10px 0 0 0;}
+/*헤더 메뉴*/
+#headerMenu > ul {display: flex; height: 96px; align-items: center;}
+#headerMenu > ul > li { width:163px; font-size: 26px;}
+#headerMenu > ul > li > a { margin-top: 20px;}
+#headerMenu > ul > li > img { width: 8px; margin-left: 10px; margin-bottom: 4px;}
 
+#topMenu {position: relative;}
+
+/*호버 메뉴*/
+#hiddenMenuBg {display: none;}
 #hiddenMenu {display: none;}
-#hiddenMenu > ul {width:156.35px;}
-#headerMenu:hover > ul {display: flex; position: absolute; top: 80px; text-align: left;}
 
+#headerMenu:hover > div {
+    display:block;
+    height: 300px; width: 100vw; 
+    background-color: white;
+    position: absolute; 
+    top: 120px; left:0;
+    box-shadow: 0px 5px 3px rgba(44, 44, 44, 0.1);
+}
+
+#headerMenu:hover > ul > div { display: flex;
+    position: absolute; top: 96px;
+    width: 100vw; z-index: 2;}
+
+#hiddenMenu > ul { width: 163px;}
+#hiddenMenu > ul > li {height: 25px;}
+#hiddenMenu > ul > li > a {font-family: 'Malgun Gothic'; font-weight: bold; font-size: 14px;}
+
+/*헤더 버튼*/
 #franchiseBtn, #deliveryBtn { 
-    font-size: 24px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 22px; 
     width:168px; height:50px; 
     border-radius: 25px; 
 }
@@ -47,13 +73,23 @@ a { text-decoration: none; color: black;}
 #franchiseBtn {background-color: #502416;}
 #deliveryBtn {background-color: #d72300;}
 
+#toTopbutton > a {
+    width: 52px; height: 52px; 
+    background-color: black;
+    position: fixed;
+    right: 20px;
+    bottom: 316px;
+    z-index: 4;
+    opacity: 0.5;
+}
+
 /*본문*/
 
 #wrap { background-color: #f2ebe6; }
 
 #mainContent { width: 1440px; height: 100%; margin: 0 auto; vertical-align: bottom; }
 
-#mainBanner > img { display: block; width: 100%; }
+#mainBanner > img { display: block; width: 100%; height: 480px; }
 
 #mainVideo { 
     border: 0;
@@ -80,6 +116,7 @@ a { text-decoration: none; color: black;}
     border-radius: 4px;
     text-align: center;
 }
+
 
 #youtube .numBox { width: 115px;}
 .numBox > img { padding-top: 7px;}
