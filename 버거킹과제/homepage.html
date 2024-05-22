@@ -3,9 +3,10 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>버거킹</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='homepage.css'>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src='main.js'></script>
 </head>
 <body>
@@ -122,45 +123,64 @@
 
             </div>
 
-            <div>
-                매장찾기
-                고객님 주변에 있는 버거킹을 찾아보세요!
+            <div id="findMallBg">
+                <div id="findMall">
+                    <h1>매장찾기</h1>
+                    <p>고객님 주변에 있는 버거킹을 찾아보세요!</p>
+                </div>
+
+                <div id="findMallBtn">
+                    <a href="#">매장찾기</a>
+                </div>
+
+                <ul>
+                    <li>
+                        <img src="img/mainIcon1.gif">
+                        <p>집에서 편안하게 <br/> 받을 수 있는</p>
+                        <span class="redltr">딜리버리</span>
+                    </li>
+
+                    <li>
+                        <img src="img/mainIcon2.gif">
+                        <p>미리 주문하고 <br/> 픽업가능한</p>
+                        <span class="redltr">킹오더</span>
+                    </li>
+
+                    <li>
+                        <img src="img/mainIcon3.gif">
+                        <p>차안에서 빠르게 <br/> 이용할 수 있는</p>
+                        <span class="redltr">드라이브 스루</span>
+                    </li>
+
+                    <li>
+                        <img src="img/mainIcon4.gif">
+                        <p>24시간 언제든 <br/> 함께할 수 있는</p>
+                        <span class="redltr">24시간</span>
+                    </li>
+
+                    <li>
+                        <img src="img/mainIcon5.gif">
+                        <p>든든한 <br/> 아침을 도와줄</p>
+                        <span class="redltr">아침메뉴</span>
+                    </li>
+
+                    <li class="findMallLastBox">
+                        <img src="img/mainIcon6.gif">
+                        <p>내 차와 함께 <br/> 올 수 있는</p>
+                        <span class="redltr">주차공간</span>
+                    </li>
+                </ul>
             </div>
 
-            <div>
-                매장찾기</a>
-            </div>
-            <div>
-
-                집에서 편안하게
-                받을 수 있는
-                딜리버리
-
-                미리 주문하고
-                픽업가능한
-                킹오더
-
-                차안에서 빠르게
-                이용할 수 있는
-                드라이브 스루
-
-                24시간 언제든
-                함께할 수 있는
-                24시간
-
-                든든한
-                아침을 도와줄
-                아침메뉴
-
-                내 차와 함께
-                올 수 있는
-                주차공간
-
-            </div>
-
-            <div>
-                집에서 만나는 버거킹
-                딜리버리 전화주문 안내 10:00–22:00 / 연중무휴 (매장별로 상이할 수 있습니다.)
+            <div id="atHomebanner">
+                <div id="atHomeleft">
+                    <h2>집에서 만나는 버거킹</h2>
+                    <p>딜리버리 전화주문 안내 10:00-22:00 / 연중무휴 (매장별로 상이할 수 있습니다.)</p>
+                </div>
+                <div id="atHomeright">
+                    <img src="img/callIcon.png"/>
+                    <h1>1599-0505</h1>
+                </div>
             </div>
         </div>
 
@@ -168,69 +188,91 @@
 
         <!-- 푸터 -->
 
-        <div>
-            <ul id ="footerMenu">
+        <div id="topFooter">
+            <ul>
                 <li>
-                    <a href="#">메뉴</a>
-                    <a href="#">추천메뉴</a>
-                    <a href="#">맥시멈</a>
-                    <a href="#">프리미엄</a>
-                    <a href="#">와퍼&주니어</a>
-                    <a href="#">치킨&슈림프버거</a>
-                    <a href="#">올데이킹&킹모닝</a>
-                    <a href="#">사이드</a>
-                    <a href="#">음료&디저트</a>
-                </li>
-                <li>           
-                    <a href="#">매장</a>
-                    <a href="#">매장찾기</a>
+                    <ul class ="footerMenu">
+                        <li><a class="ftMenubig" href="#">메뉴</a></li>
+                        <li><a href="#">추천메뉴</a></li>
+                        <li><a href="#">맥시멈</a></li>
+                        <li><a href="#">프리미엄</a></li>
+                        <li><a href="#">와퍼&주니어</a></li>
+                        <li><a href="#">치킨&슈림프버거</a></li>
+                        <li><a href="#">올데이킹&킹모닝</a></li>
+                        <li><a href="#">사이드</a></li>
+                        <li><a href="#">음료&디저트</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#">이벤트</a>
-                    <a href="#">이벤트</a>
+                    <ul class ="footerMenu">
+                        <li><a class="ftMenubig" href="#">매장</a></li>
+                        <li><a href="#">매장찾기</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#">브랜드 스토리</a>
-                    <a href="#">BRAND</a>
-                    <a href="#">WHOPPER</a>
-                    <a href="#">COMM.</a>
+                    <ul class ="footerMenu">
+                        <li><a class="ftMenubig" href="#">이벤트</a></li>
+                        <li><a href="#">이벤트</a></li>
+                    </ul>
                 </li>
                 <li>
-                    <a href="#">고객센터</a>
-                    <a href="#">공지사항</a>
-                    <a href="#">버거킹앱이용안내</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">문의</a>
-                    <a href="#">가맹점모집</a>
-                    <a href="#">인재채용</a>                    
+                    <ul class ="footerMenu">
+                        <li><a class="ftMenubig" href="#">브랜드 스토리</a></li>
+                        <li><a href="#">BRAND</a></li>
+                        <li><a href="#">WHOPPER</a></li>
+                        <li><a href="#">COMM.</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class ="footerMenu">
+                        <li><a class="ftMenubig" href="#">고객센터</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">버거킹앱이용안내</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">문의</a></li>
+                        <li><a href="#">가맹점모집</a></li>
+                        <li><a href="#">인재채용</a></li>   
+                    </ul>
                 </li>
             </ul>
         </div>
 
-        <div>
-            <a href="#">이용약관</a>
-            <a href="#">개인정보처리방침</a>
-            <a href="#">영상정보처리기기운영방침</a>
-            <a href="#">법적고지</a>
+        <div id="btmFooterBG">
+            <div id="btmFooter">
+                <div id="btmFooterleft">
+                    <img src="img/footerBKLogo.png">
 
-            인재채용</a>
-            가맹점모집</a>
+                    <p>서울 종로구 삼봉로 71 G 타워 4F,5F 주식회사 비케이알 | 전화주문 1599-0505</p>
+                    
+                    <p><a href="#">사업자 등록번호 101-86-76277</a> | (주)BKR 대표이사 이동형</p>
+                    
+                    <p>Copyright 2019 BKR Co., Ltd. All right Reserved</p>
 
-            BKR Logo
+                    <div id="footerSocial">
+                        <a href="#"><img src="img/footerIcon1.png"></a>
+                        <a href="#"><img src="img/footerIcon2.png"></a>
+                        <a href="#"><img src="img/footerIcon3.png"></a>
+                    </div>
 
-            서울 종로구 삼봉로 71 G 타워 4F,5F 주식회사 비케이알 | 전화주문 1599-0505
-            
-            <a href="#">사업자 등록번호 101-86-76277</a> | (주)BKR 대표이사 이동형
-            
-            Copyright 2019 BKR Co., Ltd. All right Reserved
-            
-            <a href="#">페이스북</a>
-            <a href="#">인스타그램</a>
-            <a href="#">팀홀튼</a>
+                </div>
+                <div id="btmFooterright">
+                    <a href="#">이용약관</a><span>|</span>
+                    <a href="#">개인정보처리방침</a><span>|</span>
+                    <a href="#">영상정보처리기기운영방침</a><span>|</span>
+                    <a href="#">법적고지</a>
+                    <br/>
+                    <div>
+                        <div id="footerBtn">
+                            <a href="#">인재채용</a>
+                        </div>
 
+                        <div id="footerBtn">
+                            <a href="#">가맹점모집</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     </div>
 </body>
 </html>
