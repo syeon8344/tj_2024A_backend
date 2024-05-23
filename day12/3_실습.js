@@ -19,28 +19,35 @@ function uploadItem() {
     todoList.push(document.querySelector('#item').value)
     let index = todoList.length -1
     let html = document.querySelector("#list").innerHTML
-    html += `<li id="list${index}" style="background-color: #FFFFFF; font-weight: bold;>
-                <span>${todoList[index]}</span>
+    html += `<li id="list${index}" style="background-color: #FFFFFF; font-weight: bold;">
+                <p id="text${index}">${todoList[index]}</p>
                 <div>
-                    <button onclick="changeStyle(${index})">변경</button>
-                    <button onclick="itemDelete(${index})">삭제</button>
+                    <button type="button" onclick="changeStyle(${index})">변경</button>
+                    <button type="button" onclick="itemDelete(${index})">삭제</button>
                 </div>
             </li>`
     document.querySelector("#list").innerHTML = html
 }
 
 function changeStyle(x) {
-    let color = document.getElementById(`#list${x}`).style.backgroundColor
-    if (color == "#FFFFFF") {
-        document.getElementById(`#list${x}`).style.backgroundColor = "#000000"
-        document.getElementById(`#list${x}`).style.textDecorationLine = "line-through"
+    console.log("CHANGE")
+    console.log(document.getElementById(`list${x}`))
+    let color = document.getElementById(`list${x}`).style.backgroundColor
+    console.log(color)
+    if (color == "rgb(255, 255, 255)") {
+        console.log("CHANGE1")
+        document.getElementById(`list${x}`).style.backgroundColor = "rgb(0, 0, 0)"
+        document.getElementById(`text${x}`).style.textDecorationLine = "line-through"
+        document.getElementById(`text${x}`).style.color = "rgb(255, 255, 255)"
+
     }
-    if (color == "#000000") {
-        document.getElementById(`#list${x}`).style.backgroundColor = "#FFFFFF"
-        document.getElementById(`#list${x}`).style.textDecorationLine = "none"
+    if (color == "rgb(0, 0, 0)") {
+        document.getElementById(`list${x}`).style.backgroundColor = "rgb(255, 255, 255)"
+        document.getElementById(`text${x}`).style.textDecorationLine = "none"
+        document.getElementById(`text${x}`).style.color = "rgb(0, 0, 0)"
     }
 }
 
 function itemDelete(x) {
-    document.getElementById(`list${todoList[x]}`).remove()
+    document.getElementById(`list${x}`).remove()
 }
