@@ -22,6 +22,7 @@ function carIn(x) { //입차
     }
     menuPrint();
 }
+
 function carOut() { //출차
     let c = document.querySelector('#inputCar').value;
     let index = -1;
