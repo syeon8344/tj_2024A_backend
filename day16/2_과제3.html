@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        #calendarMenu { text-align: center; font-weight: bold;}
+        #calendarMenu > button {border: none; background-color: white; font-size: 20px; color: crimson;}
+        table { width: 100%; border-collapse: collapse; border: none;}
+        thead > tr > th {font-weight: normal; background-color: rgb(226, 226, 226);}
+        tbody > tr {width: 100%}
+        tbody > tr > td {height: 100px;}
+        #sunday { background-color: crimson; color: white;}
+    </style>
+    
+</head>
+<body>
+    <div id = "calendarMenu">
+        <button onclick="prevMonth()" type="button"><</button>
+        2024년 <span id="month">5</span>월
+        <button onclick="nextMonth()"type="button">></button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th id="sunday">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src='2_과제3.js'></script>
+</body>
+</html>
