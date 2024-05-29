@@ -28,7 +28,7 @@
 
         - style 속성
             <전체호출> document.querySelector('선택자').style
-            <전체수정> document.querySelector('선택자').style = '새로운 CSS'
+            <전체수정> document.querySelector('선택자').style.cssText = '새로운 CSS'
             <일부호출> document.querySelector('선택자').style.css속성명
             <일부수정>document.querySelector('선택자').style.css속성명 = '속성값'
 

@@ -8,30 +8,54 @@
     <style>
         #calendarMenu { text-align: center; font-weight: bold;}
         #calendarMenu > button {border: none; background-color: white; font-size: 20px; color: crimson;}
-        table { width: 100%; border-collapse: collapse; border: none;}
-        thead > tr > th {font-weight: normal; background-color: rgb(226, 226, 226);}
+        table { width: 100%; border-collapse: collapse; border-style: hidden;}
         tbody > tr {width: 100%}
-        tbody > tr > td {height: 100px;}
+        thead > tr > th {font-weight: normal; background-color: rgb(226, 226, 226);}
+        tbody > tr > td {height: 100px; vertical-align: top; border-right: 1px solid rgb(241, 241, 241); border-bottom: 1px solid rgb(241, 241, 241);}
+        p { margin: 0;}
         #sunday { background-color: crimson; color: white;}
+        .memoTxt {width:193px;}
+        #memo { width:100%;}
+        #schedulePopUp {
+            display: none;
+        }
+
+        #schedulePopUp > textarea {
+            display: block;
+            width: 200px; height: 120px;
+            margin-bottom: 20px;
+        }
     </style>
     
 </head>
 <body>
-    <div id = "calendarMenu">
-        <button onclick="prevMonth()" type="button"><</button>
-        2024년 <span id="month">5</span>월
-        <button onclick="nextMonth()"type="button">></button>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th id="sunday">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div id = 'wrap'>
+        <div id = "calendarMenu">
+            <button onclick="changeMonth(-1)" type="button"><</button>
+            <span id ="year"></span>년 <span id="month"></span>월
+            <button onclick="changeMonth(1)"type="button">></button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th id="sunday">일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+
+    </div>
+    <div id = "schedulePopUp">
+        <h2>메모 입력</h2>
+        <textarea id="memoContent" placeholder="메모를 입력하세요"></textarea>
+        <div>
+            <input type="color" id="memoColor" value="#45C8E9" >
+            <input type="date" id="memoDate">
+            <button type="button" onclick="writeMemo()">확인</button>
+        </div>
+    </div>
 
     <script src='2_과제3.js'></script>
 </body>
