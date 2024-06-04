@@ -33,7 +33,7 @@ function signup(){ // HTML 가져오기 > 유효성검사 > 데이터 가공 > �
         if (memberList[i].phone == phone) {alert('연락처가 중복됨'); return;}
     }
 
-    let no = memberList.length == 0 ? 1 : memberList[member.length-1].no + 1
+    let no = memberList.length == 0 ? 1 : memberList[memberList.length-1].no + 1
     let member = {no : no, id : id, pw : String(pw), name : name, phone : phone};
     memberList.push(member);
     localStorage.setItem("mList", JSON.stringify(memberList))

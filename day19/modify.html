@@ -35,24 +35,22 @@
                 </div>
             </nav>
         </div>
-
-
-        <div id="main">
-            <form  class="form-control">
-                <h3 class="mb-4">회원가입</h3>
-                아이디 : <input id="id" type="text"/> <br/>
-                비밀번호 : <input id="pw" type="text"/><br/>
-                비밀번호 확인 : <input id="pwconfirm" type="text"/><br/>
-                이름 : <input id="name" type="text"/><br/>
-                연락처 : <input id="phone" type="text"/><br/>
-                <button type="button" onclick="signup()">회원가입 </button>
-            </form>
-        </div>
+        <form class="form-control">
+            <h3 class="mb-4">글 수정하기</h3>
+            <div class="row mb-4 px-3">
+                제목 : <input type="text" id="titleInput" placeholder="제목을 입력하세요"/>
+            </div>
+            <div class="row mb-4 px-3">
+                내용 : <textarea id = "contentInput" placeholder="내용을 입력하세요"></textarea>
+            </div>
+            <button class="btn btn-primary" type="button" onclick="boardEdit()">글 수정 완료</button>
+            <button class="btn btn-primary" type="reset">다시 쓰기</button>
+        </form>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <script src="signup.js"></script>
+    <script src="modify.js"></script>
 </body>
 </html>

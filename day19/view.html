@@ -36,23 +36,23 @@
             </nav>
         </div>
 
+        <div class="form-control">
+            <h3 class="mb-4">글 상세 내용</h3>
+            <div id="main">
+                <a class="mb-4" href="board.html">돌아가기</a>
+                <div class = "container" id="boardBox">
 
-        <div id="main">
-            <form  class="form-control">
-                <h3 class="mb-4">회원가입</h3>
-                아이디 : <input id="id" type="text"/> <br/>
-                비밀번호 : <input id="pw" type="text"/><br/>
-                비밀번호 확인 : <input id="pwconfirm" type="text"/><br/>
-                이름 : <input id="name" type="text"/><br/>
-                연락처 : <input id="phone" type="text"/><br/>
-                <button type="button" onclick="signup()">회원가입 </button>
-            </form>
+                </div>
+
+                <button class="btn btn-primary" type="button" onclick="_delete()">삭제</button>
+                <button class="btn btn-primary" type="button" onclick="_edit()">수정</button>
+            </div>
         </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <script src="signup.js"></script>
+    <script src="view.js"></script>
 </body>
 </html>

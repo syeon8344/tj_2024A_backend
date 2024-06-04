@@ -15,7 +15,7 @@ function init(){
     let memList = JSON.parse(localStorage.getItem("mList"))
     if (memList == null) {memList = []}
     let acNo = sessionStorage.getItem("loginNo")
-    if (acNo == null) {alert("로그인 후 접근가능한 페이지"); location.href="login.html"; return;}
+    if (acNo == null) {acNo = 0; alert("로그인 후 접근가능한 페이지"); location.href="login.html"; return;}
 
     memberList = memList
     accNo = acNo
