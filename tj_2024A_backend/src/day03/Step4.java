@@ -1,16 +1,45 @@
 package day03;
 
+import java.util.Scanner;
+
 public class Step4 {
 
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
 //        [ 반복문 없이 풀이하는 입출력과 조건문 문제 ]
 //        문제1 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 '합격' 아니면 '불합격' 출력 하시오.
+        int question1 = scan.nextInt();
+        if (question1 >= 90) {
+            System.out.println("합격");
+        } else {
+            System.out.println("불합격");
+        }
+
 //
 //        문제2 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
 //
 //                문제3 : 각 3개의 정수형으로 수를 입력받아 가장 큰 수를 출력 하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
 //
 //        문제4 : 각 3개의 정수형으로 수를 입력받아 오름차순 순서대로 출력하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
+//        int q4a = scan.nextInt(); int q4b = scan.nextInt(); int q4c = scan.nextInt();
+//        // 오름차순 : 1, 2, 3
+//        if (q4a == q4b || q4a == q4c || q4b == q4c) { // SWAP
+//            System.out.println("서로 같은 정수값이 있습니다");
+//        } if (q4a > q4b) {
+//            int temp = q4a;
+//            q4a = q4b;
+//            q4b = temp;
+//        } if (q4b > q4c) {
+//            int temp = q4b;
+//            q4b = q4c;
+//            q4c = temp;
+//        } if (q4a > q4b) {
+//            int temp = q4a;
+//            q4a = q4b;
+//            q4b = temp;
+//
+//        System.out.printf("\n정수의 순서는 %d, %d, %d", q4a, q4b, q4c);
+
 //
 //        문제5 : 가위바위보 게임 구현하기.
 //                - 가위가 '0' 이고 바위가 '1' 이고 보가 '2' 일때 플레이어1와 플레이어2 가 있습니다.
@@ -24,7 +53,7 @@ public class Step4 {
 //        -연수가 4로 나누어 떨어지는 해는 윤년으로 한다.
 //        -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다.
 //        -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다.
-//   [ 출력조건] '입력한OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
+//   [ 출력조건] '입력한 OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
 //
 //                문제7 : 주차 사용요금 계산하기
 //                [ 선언 변수 조건 ] 입차시간이 9시30분 입니다.
@@ -33,6 +62,15 @@ public class Step4 {
 //   [ 처리출력 조건 ] 1분당 1000원으로 계산하여 사용요금' 0000원' 을 출력하시오,
 //        - 단 입차 시간 이전 으로 입력 할 경우에는 '출차시간 오류' 출력하시오.
 //
+        int inHour = 9; int inMinute = 30;
+        System.out.println(">> 출차시간_시간 : "); int outHour = scan.nextInt();
+        System.out.println(">> 출차시간_분 : ");   int outMinute = scan.nextInt();
+        int passedTime = (outHour*60 + outMinute) - (inHour*60 + inMinute);
+        if (passedTime < 0) {
+            System.out.println("출차시간 오류");
+        } else {
+            System.out.printf("\n사용요금 %4d원", passedTime * 1000);
+        }
 //                문제8 : 로그인 처리
 //   [입력 조건] 아이디[문자열] 와 비밀번호[문자열] 를 입력받기
 //   [처리출력 조건]
