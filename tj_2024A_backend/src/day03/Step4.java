@@ -17,28 +17,20 @@ public class Step4 {
 
 //
 //        문제2 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
-//
+//      if >= 90 A else if >= 80 B else if >= 70 C else 재시험
 //                문제3 : 각 3개의 정수형으로 수를 입력받아 가장 큰 수를 출력 하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
 //
 //        문제4 : 각 3개의 정수형으로 수를 입력받아 오름차순 순서대로 출력하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
-//        int q4a = scan.nextInt(); int q4b = scan.nextInt(); int q4c = scan.nextInt();
-//        // 오름차순 : 1, 2, 3
-//        if (q4a == q4b || q4a == q4c || q4b == q4c) { // SWAP
-//            System.out.println("서로 같은 정수값이 있습니다");
-//        } if (q4a > q4b) {
-//            int temp = q4a;
-//            q4a = q4b;
-//            q4b = temp;
-//        } if (q4b > q4c) {
-//            int temp = q4b;
-//            q4b = q4c;
-//            q4c = temp;
-//        } if (q4a > q4b) {
-//            int temp = q4a;
-//            q4a = q4b;
-//            q4b = temp;
-//
-//        System.out.printf("\n정수의 순서는 %d, %d, %d", q4a, q4b, q4c);
+        int q4a = scan.nextInt(); int q4b = scan.nextInt(); int q4c = scan.nextInt();
+        // 오름차순 : 1, 2, 3
+        if (q4a == q4b || q4a == q4c || q4b == q4c) { // SWAP
+            System.out.println("서로 같은 정수값이 있습니다");
+        }
+        if (q4a > q4b) {int temp = q4a; q4a = q4b; q4b = temp;}
+        if (q4b > q4c) {int temp = q4b; q4b = q4c; q4c = temp;}
+        if (q4a > q4b) {int temp = q4a; q4a = q4b; q4b = temp;}
+
+        System.out.printf("\n정수의 순서는 %d, %d, %d", q4a, q4b, q4c);
 
 //
 //        문제5 : 가위바위보 게임 구현하기.
@@ -50,9 +42,9 @@ public class Step4 {
 //        문제6 : 윤년/평년 판단하기
 //                [ 입력조건 ] 하나의 연도를 입력 받습니다.
 //   [ 윤년/평년 조건 ]
-//        -연수가 4로 나누어 떨어지는 해는 윤년으로 한다.
-//        -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다.
-//        -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다.
+//        -연수가 4로 나누어 떨어지는 해는 윤년으로 한다. 3
+//        -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다. 2
+//        -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다. 1번째로 확인
 //   [ 출력조건] '입력한 OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
 //
 //                문제7 : 주차 사용요금 계산하기
