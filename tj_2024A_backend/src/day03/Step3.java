@@ -29,13 +29,16 @@ public class Step3 {
 //
 //        문제4 : 하나의 정수형으로  입력받아 11의 배수 이거나 짝수 이면 'O' 아니면 'X' 출력 하시오.
 //
-
         int num;
         System.out.print("수 입력 : ");
         num = scan.nextInt();
         System.out.println(num % 11==0 ? "o": num % 2==0 ? "o":"x");
 //        문제5 : 두개의 정수형으로 입력받아 더 큰수 출력 하시오.
 //
+        int num5 = scan.nextInt();
+        int num5a = scan.nextInt();
+        System.out.println(num5 > num5a ? num5 : num5a);
+
 //       문제6 : 정수형으로 반지름을 입력받아 원 넓이 출력 하시오. 소수점 둘째 자리 까지 출력하시오.
 //       계산식) 원 넓이 공식 => 반지름 * 반지름 * 원주율[3.14]
 
@@ -62,7 +65,7 @@ public class Step3 {
         System.out.printf("\n>> 넓이 : %.1f", area);
 //
 //        문제9 : 키를 정수를 입력받아 표준체중 출력하기 , 정수형으로 출력하시오.
-//                계산식) 표준체중 계산식 = > (키 - 100) * 0.9
+//            계산식) 표준체중 계산식 = > (키 - 100) * 0.9
         System.out.print(" >> 키 입력 : ");
         int height = scan.nextInt();
         int weight = (int)((height - 100) * 0.9) ;
@@ -71,6 +74,12 @@ public class Step3 {
 //
 //        문제10 : 키와 몸무게를 입력받아 BMI 출력하기 , 소수점 둘째 자리 까지 출력하시오.
 //        계산식) BMI 계산식 = > 몸무게 / ((키 / 100) * (키 / 100))
+        System.out.println(" >> 키 입력 : ");
+        int height2 = scan.nextInt();
+        System.out.println(" >> 몸무게 입력 : ");
+        int weight2 = scan.nextInt();
+        double bmi = weight2 / ((height2 / 100) * (height2 / 100));
+        System.out.printf("\n >> BMI : %.2f", bmi);
 //
 //        문제11 : inch 를 입력받아 cm 로 변환하기  , 소수점 둘째 자리까지 출력하시오.
 //                계산식) 1 inch -> 2.54cm

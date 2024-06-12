@@ -8,8 +8,8 @@ public class Step2 {
         
         // 예제 1: 작성자, 내용, 날짜 입력받아 형식에 맞춰 출력하기
         // 1. 입력객체
-            // 1. Scanner 클래스 [자동완성 입력시 import 자동완성, 추천
-                // - ㅑimport java.util.,server
+            // 1. Scanner 클래스 [자동완성 입력시 import 자동완성, 추천]
+                // - import java.util.,server
         Scanner scanner = new Scanner(System.in);
         // 2. 입력받고 변수에 저장
         System.out.print("작성자 : "); String 작성자 = scanner.next();
