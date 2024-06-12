@@ -18,6 +18,7 @@ public class Step4 {
 //
 //        문제2 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
 //      if >= 90 A else if >= 80 B else if >= 70 C else 재시험
+
 //        문제3 : 각 3개의 정수형으로 수를 입력받아 가장 큰 수를 출력 하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
 //
 //        문제4 : 각 3개의 정수형으로 수를 입력받아 오름차순 순서대로 출력하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
@@ -46,6 +47,16 @@ public class Step4 {
 //        -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다. 2
 //        -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다. 1번째로 확인
 //   [ 출력조건] '입력한 OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
+        System.out.println("연도를 입력하세요 : "); int year = scan.nextInt();
+        if (year%4 == 0 && year%100 == 0 && year%400 == 0) {
+            System.out.printf("입력한 %4d는 윤년입니다", year);
+        } else if (year%4 == 0 && year%100 == 0) {
+            System.out.printf("입력한 %4d는 평년입니다", year);
+        } else if (year%4 == 0) {
+            System.out.printf("입력한 %4d는 윤년입니다", year);
+        }
+
+
 //
 //                문제7 : 주차 사용요금 계산하기
 //                [ 선언 변수 조건 ] 입차시간이 9시30분 입니다.
@@ -70,10 +81,37 @@ public class Step4 {
 //        2. 아이디가 다르면 '아이디 정보가 일치하지 않습니다.'
 //        3. 아이디는 일치하고 비밀번호가 다르면 '비밀번호 정보가 일치하지 않습니다'
 //
+        System.out.println("아이디 : "); String id = scan.nextLine();
+        System.out.println("비밀번호 : "); String pw = scan.nextLine();
+
+        if (!id.equals("admin")) {
+            System.out.println("아이디 정보가 일치하지 않습니다.");
+        } else if (!pw.equals("1234")) {
+            System.out.println("비밀번호 정보가 일치하지 않습니다.");
+        } else {
+            System.out.println("로그인성공");
+        }
 //        문제9 : 당첨번호 개수  찾기
 //                [ 선언 변수 조건 ] int 공1 = 14 ; int 공2 = 21 ; int 공3 = 9; 이와 같이 변수를 먼저 선언해주세요.
 //   [ 입력 조건 ] 세개의 정수를 입력받아 각 변수에 저장하시오.
 //   [ 출력 조건 ] 입력받은 세 정수 중에서 공1~공3 까지 동일한 번호 가 몇개 인지 출력하시오.
+        int 공1 = 14; int 공2 = 21; int 공3 = 9;
+
+        System.out.println("첫 번째 숫자 : "); int num9a = scan.nextInt();
+        System.out.println("두 번째 숫자 : "); int num9b = scan.nextInt();
+        System.out.println("세 번째 숫자 : "); int num9c = scan.nextInt();
+
+        int match = 0;
+        if (num9a == 공1 || num9a == 공2 || num9a == 공3) {
+            match++;
+        }
+        if (num9b == 공1 || num9b == 공2 || num9b == 공3) {
+            match++;
+        }
+        if (num9c == 공1 || num9c == 공2 || num9c == 공3) {
+            match++;
+        }
+        System.out.println("동일한 번호는 : " + match + "개입니다");
 
     }
 }

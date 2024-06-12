@@ -23,28 +23,28 @@ public class Step3 {
 //        }
 //
 //        System.out.println();
-//        // 문제 5.
-//        int b2 = 3;
-//        int s2 = 1;
-//        for (int i = 0; i < 7; i++) {
-//
-//            for (int j = b2; j > 0; j--) {
-//                System.out.print(" ");
-//            }
-//
-//            for (int k = s2; k > 0; k--) {
-//                System.out.print("*");
-//            }
-//
-//            if (i < 3) {
-//                b2--;
-//                s2 += 2;
-//            } else {
-//                b2++;
-//                s2 -= 2;
-//            }
-//            System.out.println();
-//        }
+        // 문제 5.
+        int b2 = 3;
+        int s2 = 1;
+        for (int i = 0; i < 7; i++) {
+
+            for (int j = b2; j > 0; j--) {
+                System.out.print(" ");
+            }
+
+            for (int k = s2; k > 0; k--) {
+                System.out.print("*");
+            }
+
+            if (i < 3) {
+                b2--;
+                s2 += 2;
+            } else {
+                b2++;
+                s2 -= 2;
+            }
+            System.out.println();
+        }
 //
 //
 //        // [입력] 입력개체
