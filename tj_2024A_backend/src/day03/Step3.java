@@ -84,23 +84,50 @@ public class Step3 {
 //        문제11 : inch 를 입력받아 cm 로 변환하기  , 소수점 둘째 자리까지 출력하시오.
 //                계산식) 1 inch -> 2.54cm
 //
+        System.out.println("인치 : "); int inch = scan.nextInt();
+        System.out.printf("인치->센티미터 : %.2f", 2.54*inch);
 //        문제12:  중간고사, 기말고사, 수행평가를 입력받아 반영비율별 계산하여 소수 둘째자리까지 점수 출력하시오
 //        계산식 반영비율)  중간고사 반영비율 => 30 %  / 기말고사 반영비율 => 30 %   / 수행평가 반영비율 => 40 %
 //              %.2f
-//                문제13 :  연산 순서 나열 하고 printf() 에 출력되는 x 와 y 값을 예측하시오.
+        System.out.println("중간고사 : "); int midExam = scan.nextInt();
+        System.out.println("기말고사 : "); int endExam = scan.nextInt();
+        System.out.println("수행평가 : "); int schoolWork = scan.nextInt();
+        System.out.printf("계산결과 : %.2f", 0.3 * midExam + 0.3 * endExam + 0.4 * schoolWork);
+
+//        문제13 :  연산 순서 나열 하고 printf() 에 출력되는 x 와 y 값을 예측하시오.
 //        int x = 10;
 //        int y = x-- + 5 + --x;
 //        printf(" x의 값 : %d , y의값 :  %d ", x, y)
+
+        /*
+            1. int x = 10
+            2. int y = x + 5 : 10 + 5 = 15
+            3. (x--) x = 9
+            4. 15 + --x : (--x) x = 8 : 15 + 8 = 23
+
+         */
+        System.out.printf(" x의 값 : %d , y의 값 : %d ", 8, 23);
 //
 //        문제14 : 나이를 입력받아 나이가 10세이상이면 학생 , 20세이상이면 성인 , 40세이상이면 중년 으로 출력하기
-//                  age >= 40 ? "중년" : age >= 20 ? "청년" : age >= 10 ? "학생" : "undefined"
+//
+        System.out.println("나이 : "); int age = scan.nextInt();
+        System.out.println(age >= 40 ? "중년" : age >= 20 ? "청년" : age >= 10 ? "학생" : "undefined");
 //        문제15 : 국어 , 영어 , 수학 점수를 입력받아 각 변수에 저장하고 총점(소수점 0자리) 출력 , 평균(소수점 2자리 까지) 출력
 //
-//        문제16 : 3개의 정수형으로 입력받아 가장 큰수 출력 1 2 3 3 2 1 1 3 2  2 3 1
-        // 정수1 : a   2 : b   3 : c
-        //System.out.println(a > b && a > c ? a : b > c ? b : c); 
-//
+        System.out.println("국어 점수 : "); int i15Kor = scan.nextInt();
+        System.out.println("영어 점수 : "); int i15Eng = scan.nextInt();
+        System.out.println("수학 점수 : "); int i15Math = scan.nextInt();
 
+        System.out.printf("총점은 %.0f 점입니다", (float)i15Kor + i15Eng + i15Math);
+        System.out.printf("평균점수는 %.2f 점입니다", (float)(i15Kor + i15Eng + i15Math)/3);
+
+//        문제16 : 3개의 정수형으로 입력받아 가장 큰수 출력 1 2 3 3 2 1 1 3 2  2 3 1
+        System.out.println("정수 1"); int i16a = scan.nextInt();
+        System.out.println("정수 2"); int i16b = scan.nextInt();
+        System.out.println("정수 3"); int i16c = scan.nextInt();
+        System.out.println(i16a > i16b && i16a > i16c ? i16a : i16b > i16c ? i16b : i16c);
+
+//
 //        문제17 : 아이디[문자열] 와 비밀번호[문자열] 를 입력받아 아이디가 'admin' 이고 비밀번호가 '1234' 와 일치하면 '로그인성공' 아니면 '로그인실패' 출력 
         
         // 문자열 (String)은 비교연산자 사용 불가능 (객체라서) // inputID == "admin" 불가능
@@ -116,25 +143,6 @@ public class Step3 {
         System.out.println(">> 정수 1: "); int i1 = scan.nextInt();
         System.out.println(">> 정수 2: "); int i2 = scan.nextInt();
         System.out.println(i1 == i2 ? ">> 두 정수가 서로 같음" : i2 > i1 ? ">> 정수 2가 더 큼 : " + i2 : ">> 정수 1이 더 큼 : " + i1);
-//        if (i1 < i2) {
-//            System.out.println(">> 정수 2가 더 큼 : " + i2);
-//        } else if (i2 < i1) {
-//            System.out.println(">> 정수 1이 더 큼 : " + i1);
-//        } else {
-//            System.out.println(">> 두 정수가 서로 같음");
-//        }
 
-
-        //문제13 :  연산 순서 나열 하고 printf() 에 출력되는 x 와 y 값을 예측하시오.
-        //        int x = 10;
-        //        int y = x-- + 5 + --x;
-        //        printf(" x의 값 : %d , y의값 :  %d ", x, y)
-
-//        int x = 10;
-//        int y =
-//        x-- + 5 = 15, x = 9
-//        15 + --x, x = 8, y = 23
-//        x = 8;
-//        System.out.printf(" x의 값 : %d , y의값 :  %d ", x, y);
     }
 }

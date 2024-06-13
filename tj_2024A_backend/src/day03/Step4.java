@@ -18,9 +18,25 @@ public class Step4 {
 //
 //        문제2 : 점수를 정수형으로 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
 //      if >= 90 A else if >= 80 B else if >= 70 C else 재시험
-
+        int q2 = scan.nextInt();
+        if (q2 >= 90)
+            System.out.println("A등급");
+        else if (q2 >= 80)
+            System.out.println("B등급");
+        else if (q2 >= 70)
+            System.out.println("C등급");
+        else
+            System.out.println("재시험");
 //        문제3 : 각 3개의 정수형으로 수를 입력받아 가장 큰 수를 출력 하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
 //
+        int q3a = scan.nextInt(); int q3b = scan.nextInt(); int q3c = scan.nextInt();
+        if (q3a > q3b && q3a > q3c)
+            System.out.println("가장 큰 수는 " + q3a);
+        else if (q3b > q3c)
+            System.out.println("가장 큰 수는 " + q3b);
+        else
+            System.out.println("가장 큰 수는 " + q3c);
+
 //        문제4 : 각 3개의 정수형으로 수를 입력받아 오름차순 순서대로 출력하시오. [ 전제조건 : 각 정수는 서로 다른 정수값 ]
         int q4a = scan.nextInt(); int q4b = scan.nextInt(); int q4c = scan.nextInt();
         // 오름차순 : 1, 2, 3
@@ -40,6 +56,15 @@ public class Step4 {
 //      [입력 조건] 플레이어1 과 플레이어2 에게 각각 입력을 받습니다.
 //     [출력 조건] 플레이어1 이기면 ' 플레이어1 승리 ', 플레이어2 이기면 ' 플레이어2 승리 ' 무승부 이면 '무승부' 출력 하시오.
 //
+        System.out.println("첫번째 플레이어 : "); int p1 = scan.nextInt();
+        System.out.println("두번째 플레이어 : "); int p2 = scan.nextInt();
+
+        if (p1 == p2)
+            System.out.println("무승부");
+        else if (p1 - p2 == -2 || p1 - p2 == 1)
+            System.out.println("플레이어 1 승리");
+        else
+            System.out.println("플레이어 2 승리");
 //        문제6 : 윤년/평년 판단하기
 //                [ 입력조건 ] 하나의 연도를 입력 받습니다.
 //   [ 윤년/평년 조건 ]
