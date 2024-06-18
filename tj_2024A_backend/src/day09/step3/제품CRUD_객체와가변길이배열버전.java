@@ -24,11 +24,12 @@ public class 제품CRUD_객체와가변길이배열버전 {
 //[p0]
                     for(int i = 0; ; i++){
                         if (i == prodArray.length) {
-                            Product[] newArray = new Product[i+1];
-                            System.out.println("newArray = " + Arrays.toString(newArray));
                             Product p = new Product(inputCode, inputName, inputPrice);
-                            newArray[i] = p;
+                            Product[] newArray = new Product[prodArray.length+1];
+                            for (int j=0; j< prodArray.length; j++)
+                                newArray[j] = prodArray[j];
                             prodArray = newArray;
+                            prodArray[i] = p;
                             System.out.println("newProdArray = " + Arrays.toString(prodArray));
                             System.out.println(i + "= i " + prodArray[i].getProdCode() + prodArray[i].getProdName() + prodArray[i].getProdPrice());
                             break;
@@ -49,10 +50,9 @@ public class 제품CRUD_객체와가변길이배열버전 {
             else if (ch == 2){
                 System.out.println("=========== 제품목록 ===========");
                 for (int i = 0; i < prodArray.length; i++) {
-                    //if (!prodArray[i].getProdCode().equals("") && !prodArray[i].getProdName().equals("") && prodArray[i].getProdPrice() != 0){
-                        //System.out.printf("\t %s \t %s \t\t %d\n", prodArray[i].getProdCode(), prodArray[i].getProdName(), prodArray[i].getProdPrice());
-                    System.out.println(prodArray[i].getProdName());
-                    //}
+                    if (prodArray[i] != null){
+                        System.out.printf("\t %s \t %s \t\t %d\n", prodArray[i].getProdCode(), prodArray[i].getProdName(), prodArray[i].getProdPrice());
+                    }
                 }
             }
             else if (ch == 3){
@@ -78,8 +78,10 @@ public class 제품CRUD_객체와가변길이배열버전 {
                         System.out.println("[경고] 존재하지 않는 코드입니다.");
                         break;
                     }
-                    if (prodArray[i].getProdCode().equals(delCode) && !(prodArray[i].getProdName().equals("") && prodArray[i].getProdPrice() == 0)){
-                        prodArray[i].setProdName(""); prodArray[i].setProdPrice(0);}
+                    if (prodArray[i].getProdCode().equals(delCode) && !prodArray[i].getProdName().equals("") && prodArray[i].getProdPrice() != 0){
+                        prodArray[i] = null;
+                        break;
+                    }
 
 
                 }
