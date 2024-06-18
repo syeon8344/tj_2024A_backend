@@ -41,12 +41,17 @@ public class Level3 {
         // Level3_3
         System.out.println("\n >> Level3_3 answer >>");
         System.out.println(" >> answer time : " + LocalDateTime.now() + " >>\n");
-        int july1 = 353; int july2 = 353; int july3 = 353; int july4 = 353;
         System.out.println(" -------- 7월 매출액 -------- ");
-        System.out.println("1주차 : ■■■353만원");
-        System.out.println("2주차 : ■■■■■■■■■912만원");
-        System.out.println("3주차 : ■■■■■518만원");
-        System.out.println("4주차 : ■■■■■■■■■■■1173만원");
+        int[] july = new int[] {353, 912, 518, 1173};
+        for (int i = 0; i < 4; i++){
+            int graph = july[i]/100;
+            System.out.print((i+1) + "주차 : ");
+            for (int j = 0; j<graph; j++ ){
+                System.out.print("■");
+            }
+            System.out.print(july[i] + "만원");
+            System.out.println();
+        }
 
         // Level3_4
         System.out.println("\n >> Level3_4 answer >>");

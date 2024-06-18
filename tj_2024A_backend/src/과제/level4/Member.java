@@ -1,18 +1,16 @@
 package 과제.level4;
 
 public class Member {
-    private int no = 10000;
+    private static int no = 10000;
     private String id;
     private String pw;
     private String name;
-    private int count = 0;
 
     public Member(String id, String pw, String name) {
         this.id = id;
         this.pw = pw;
         this.name = name;
-        this.no = no + count;
-        count++;
+        no++;
     }
 
     public int getNo() {
