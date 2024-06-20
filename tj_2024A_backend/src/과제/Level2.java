@@ -66,6 +66,9 @@ public class Level2 {
         System.out.println("comran) " + comran);
         if (player - computer == -2 || player - computer == 1)
             System.out.println("result) player 승리");
+        else if (player == computer){
+            System.out.println("result) 무승부");
+        }
         else {
             System.out.println("result) com 승리");
         }

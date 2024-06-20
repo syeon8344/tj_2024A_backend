@@ -66,16 +66,22 @@ public class Level1 {
         System.out.println(" >> answer time : " + LocalDateTime.now() + " >>");
 
         System.out.print("\ninput boolean : "); boolean bool3 = scanner.nextBoolean();
-        System.out.print("\ninput byte : "); byte b3 = scanner.nextByte();
-        System.out.print("\ninput char : "); char c3 = scanner.next().charAt(0);
-        System.out.print("\ninput short : "); short s3 = scanner.nextShort();
-        System.out.print("\ninput int : "); int i3 = scanner.nextInt();
-        System.out.print("\ninput long : "); long l3 = scanner.nextLong();
-        System.out.print("\ninput float : "); float f3 = scanner.nextFloat();
-        System.out.print("\ninput double : "); double d3 = scanner.nextFloat();
+        System.out.print("input byte : "); byte b3 = scanner.nextByte();
+        System.out.print("input char : "); char c3 = scanner.next().charAt(0);
+        System.out.print("input short : "); short s3 = scanner.nextShort();
+        System.out.print("input int : "); int i3 = scanner.nextInt();
+        System.out.print("input long : "); long l3 = scanner.nextLong();
+        System.out.print("input float : "); float f3 = scanner.nextFloat();
+        System.out.print("input double : "); double d3 = scanner.nextFloat();
 
         System.out.print("\noutput boolean : " + bool3);
         System.out.print("\noutput byte : " + b3);
+        System.out.print("\noutput char : " + c3);
+        System.out.print("\noutput short : " + s3);
+        System.out.print("\noutput int : " + i3);
+        System.out.print("\noutput long : " + l3);
+        System.out.print("\noutput float : " + f3);
+        System.out.print("\noutput double : " + d3);
 
 
         // Level1_4
@@ -105,7 +111,6 @@ public class Level1 {
         // Level1_7
         System.out.println("\n >> Level1_7 answer >>");
         System.out.println(" >> answer time : " + LocalDateTime.now() + " >>\n");
-        //System.out.print("input byte : "); byte b3 = scanner.nextByte();
         System.out.print("회원명 String : "); String str7 = scanner.next();
         System.out.print("상태 boolean : "); boolean bool7 = scanner.nextBoolean();
         System.out.print("회원번호 byte : "); byte b7 = scanner.nextByte();
