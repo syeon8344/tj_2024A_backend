@@ -2,7 +2,7 @@ package day09.step1;
 
 public class Student {
     // 1. 멤버변수/필드
-        // 접근제한자 : public(공개), private(비공개) : 다른 클래스로부터
+        // 접근제한자.txt : public(공개), private(비공개) : 다른 클래스로부터
         // 타입 : 1. 기본타입(int 등), 2. 참조타입(String 등)
         // 변수명 : 임의
         // 객체 생성시 초기화 값이 없으면- 정수 : 0, 실수 : 0.0, boolean : false, 참조타입 : null
