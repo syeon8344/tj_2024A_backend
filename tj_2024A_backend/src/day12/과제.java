@@ -1,9 +1,11 @@
-package day11.step1;
+package day12;
+
+import day11.step1.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Step1 {
+public class 과제 {
     /*
         1. 데이터베이스에서 설계 기반으로 자바의 클래스를 선언/구현
         2. day11 -> Step1 클래스에
@@ -19,6 +21,35 @@ public class Step1 {
         ArrayList<Order> orderList = new ArrayList<>();
         ArrayList<Cart> cartList = new ArrayList<>();
 
+//        categoryList.add(new Category("커피"));
+//        categoryList.add(new Category("음료"));
+//        categoryList.add(new Category("아이스크림"));
+//
+//        productList.add(new Product("아메리카노", 2000, 1));
+//        productList.add(new Product("자몽에이드", 3500, 2));
+//        productList.add(new Product("소프트콘", 2000, 3));
+
+//        Order order1 = new Order("2024-06-20");
+//        orderList.add(order1);
+//        order1.addOrderDetail(1, 2);
+//        order1.addOrderDetail(1, 2);
+//        order1.addOrderDetail(1, 2);
+//
+//        Order order2 = new Order("2024-06-19");
+//        orderList.add(order2);
+//        order2.addOrderDetail(2, 2);
+//        order2.addOrderDetail(2, 2);
+//        order2.addOrderDetail(2, 2);
+//
+//        Order order3 = new Order("2024-06-18");
+//        orderList.add(order3);
+//        order3.addOrderDetail(2, 2);
+//        order3.addOrderDetail(2, 2);
+//        order3.addOrderDetail(2, 2);
+
+//        System.out.println(categoryList);
+//        System.out.println(productList);
+//        System.out.println(orderList);
         int cartCount = 0;
         // 기능 구현
         while(true){
@@ -124,7 +155,4 @@ public class Step1 {
         } // w end
     }
 }
-
-// Category Add, Category List 구현 코드에서 사용되는 지역변수, 스태틱변수, 멤버변수, 객체들이 저장되는 구역 찾기
-// 위 함수에서 사용되는 코드들의 JVM 구역 구분을 PPT로 구현
 

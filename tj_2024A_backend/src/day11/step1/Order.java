@@ -7,7 +7,7 @@ import static day11.step1.OrderDetail.orderDetailCodeCount;
 public class Order {
     private int orderCode;
     private String orderTime;
-    ArrayList<OrderDetail> orderDetailList;
+    public ArrayList<OrderDetail> orderDetailList;
 
     private static int orderCodeCount = 1;
 
