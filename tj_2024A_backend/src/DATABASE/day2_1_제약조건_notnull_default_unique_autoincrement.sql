@@ -1,8 +1,8 @@
 /*
 	제약조건
-		not null
-        default
-        unique
+		not null : null 값 X
+        default : 기본값 부여
+        unique : 중복값 허용 X
         auto_increment : 자동 번호 증가, MYSQL 전용
 
 
