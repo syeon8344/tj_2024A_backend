@@ -1,0 +1,48 @@
+JDBC : JAVA DATABASE CONNECT = 자바 데이터베이스 연동
+        - JDBC 관련 클래스/인터페이스 라이브러리 설치
+
+            자바                                     각 DBMS 회사들
+    JDBC 인터페이스 제공               구현클래스 제공 // jar : 여러 클래스 라이브러리 묶음
+
+    - JDBC 관련 클래스/인터페이스 라이브러리 설치
+        MySQL JDBC JAR
+        .jar 파일을 프로젝트 폴더로 옮기고 라이브러리 추가 버튼
+
+    - 연동 코드
+        1. Class.forName("com.mysql.cj.jdbc.Driver"); : (JDBC 구현체) 드라이버 클래스 호출
+            MYSQL : com.mysql.cj.jdbc.Driver
+            ORACLE : oracle.jdbc.OracleDriver
+        2. 연동
+        DriverManager.getConnection("DBServer주소", "계정명")
+            - DB SERVER URL : "jdbc:mysql:ip주소:port번호/DB명"
+                - 로컬PC 기준:  "jdbc:mysql:localhost:3306/DB명"
+            - 계정명 : 로컬사용시 기본값 = root
+            - 비밀번호 : (임의) 1234
+            * 연동 성공시 연동성공한 정보를 가진 객체를 반환, 해당 연동객체를 통해 DML(DB 조작)
+
+    - Connection 인터페이스 : DB와 연동 성공한 객체 정보를 가지고 조작/기능/메소드 제공하는 인터페이스
+        - 추상메서드
+            .prepareStatement("SQL질의어"); : 해당 SQL문을 기재하고 SQL 조작할 수 있는 PreparedStatement 반환
+
+    - PreparedStatement 인터페이스 : SQL 조작/메서드 인터페이스
+        - 추상메서드
+            .executeUpdate();               : insert, update, delete 문법 등 실행하고 최신화 함수, int로 "업데이트된 레코드수" 반환
+            .executeQuery();                : select를 실행하고 결과를 ResultSet으로 반환
+
+    - ResultSet 인터페이스 : select문법 실행결과를 조작/메서드 제공하는 인터페이스
+        - 추상메서드
+            .next();                        : 결과에서 다음 레코드(행) 호출, 존재 여부 true/false
+            .getString("필드명");            : 현재 레코드의 필드값 호출, 타입 : 문자열 String
+            .getInt("필드명");               : 현재 레코드의 필드값 호출, 타입 : 정수형 int
+
+        - 내부 구조
+            ResultSet [null] --- ResultSet.next() ---> [첫번째 레코드]
+            - e.g.
+                <name필드>    <------ ResultSet
+                유재석
+                강호동
+                하하
+                1. ResultSet.next() ---> 첫번째 레코드 <name필드> 유재석 (true)
+                2. ResultSet.next() ---> 두번째 레코드 <name필드> 강호동 (true)
+                3. ResultSet.next() ---> 세번째 레코드 <name필드> 하하   (true)
+                3. ResultSet.next() ---> 네번째 레코드 없음 (true -> false), 루프 끊김
