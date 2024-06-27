@@ -24,7 +24,7 @@ public class DAO {
         } catch (Exception e){
             System.out.println("연동실패" + e);
         }
-    }
+    };
 
     // 각 기능별 함수 구현
     public boolean signupCtrl(String name){
