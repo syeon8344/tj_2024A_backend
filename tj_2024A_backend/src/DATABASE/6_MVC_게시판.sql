@@ -2,7 +2,7 @@ drop database if exists day06;
 create database day06;
 use day06;
 
-#1. 회원테이블
+#1. 회원테이블member
 drop table if exists member;
 create table member(  # 아이디, 비밀번호, 이름, 연락처, 가입일, 회원번호 (pk, a_i)
 	mid varchar(30) not null unique,
@@ -67,3 +67,23 @@ insert into reply(rcontent, mno, bno) values
     ('댓글1', 3, 2),
     ('댓글1', 4, 4),
     ('댓글1', 2, 1);
+    
+# 1. 전체 검색
+select * from member;
+
+# 2. 조건 검색
+select * from member where mno = 1; -- mno가 1인 회원 레코드 검색
+select * from member where mid = 'aaa'; -- mid가 'aaa;인 회원 레코드 검색
+
+# 아이디 찾기 (회원명과 연락처가 동일한 회원 검색)
+# 비교연산자 : > < >= <= =같다 !=같지않다
+# 관계연산자 : and or not (java : && || !)
+select * from member where mname = 'bbb' and mphone = '111-111-1111';
+	-- mname이 'bbb'이고 mphone이 '111-111-1111'인 회원의 레코드 조회
+    -- JDBC DAO SQL문 : "SELECT * FROM member WHERE mname = ? AND mphone = ?"
+    
+# 비밀번호찾기 / 비교 (아이디와 연락처가 동일한 회원 검색)
+select * from member where mid = 'aaa' and mphone = '111-111-1111';
+
+# 로그인 / 비교 (아이디와 비밀번호가 동일한 회원 검색)
+select mid, mpw from member where mid = 'aaa' and mpw = '1234';
