@@ -24,7 +24,7 @@ create table board( # 글제목, 글내용,글작성일, 글작성자, 글조회
     bno int auto_increment,
     mno int,
     primary key (bno),
-    foreign key (mno) references member(mno)
+    foreign key (mno) references member(mno) on delete set null
 );
 select * from board;
 
@@ -38,8 +38,8 @@ create table reply( # 댓글내용, 댓글작성일, 댓글작성자
     bno int,
     rno int auto_increment,
     primary key (rno),
-    foreign key (mno) references member(mno),
-    foreign key (bno) references board(bno)
+    foreign key (mno) references member(mno) on delete set null,
+    foreign key (bno) references board(bno) on delete set null
 );
 select * from reply;
 

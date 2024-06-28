@@ -44,3 +44,22 @@ MVC패턴 기반의 console 회원제 게시판
     1. Controller signup() 매개변수,리턴값
     2. DAO signup() 매개변수 리턴값
     3. VIEW CONTROLLER DAO 로직, 테스트
+
+[로그인했다는 증거]
+    JS : localStorage
+    JAVA : static 변수
+    웹 : 세션
+
+[회원 정보 수정]
+    - 회원 이름과 연락처 수정하기
+    [View]
+        -> 새 이름과 연락처를 입력받아 [Controller]에 매개변수로 전달
+        <- [Controller]에서 받은 리턴값 true/false로 결과 출력
+
+    [Controller]
+        -> [View]에서 받은 이름과 연락처와 static loginMno를 [DAO]로 전달
+        <- [DAO]에서 받은 리턴값 true/false [View]로 전달
+
+    [DAO]
+        -> [Controller]에서 받은 세 매개변수로 SQL문 작성 및 실행
+        <- 성공 실패 리턴값 true/false
