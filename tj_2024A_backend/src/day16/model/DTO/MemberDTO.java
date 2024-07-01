@@ -1,6 +1,10 @@
 package day16.model.DTO; // day16 폴더의 model폴더의 DTO 폴더/패키지 위치, Member MVC 간의 자료 전달 객체
 
 public class MemberDTO { //데이터 이동 객체 Data Transfer Object
+
+    // - DB테이블 회원마다 레코드/행 1개, 레코드/행 1개당 DTO 1개
+    // -> 회원이 여러개면 DTO 여러개 -> ArrayList<MemberDTO>
+
     // 1. 멤버변수 = DB필드와 동일
     private String mid;
     private String mpw;

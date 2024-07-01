@@ -4,10 +4,7 @@ package day16.model.DAO; // day 16 폴더의 model 폴더의 DAO 폴더/패키�
 
 import day16.model.DTO.MemberDTO; // day 16 폴더의 model 폴더의 DAO 폴더/패키지 안의 MemberDTO 클래스 불러오기
 
-import java.sql.Connection; // MySQL과 연동해서 MySQL DB 관련 작업을 할 수 있는 클래스들 불러오기
-import java.sql.DriverManager; // DATABASE 폴더 내 mysql-connector-j-8.4.0.jar 파일을 외부 라이브러리로 불러와야 한다
-import java.sql.PreparedStatement; // mysql-connector-j-8.4.0.jar 오른쪽 클릭후 라이브러리 추가 버튼
-import java.sql.ResultSet;
+import java.sql.*;
 // Connection : DB와 통신 세션 관련 인터페이스, .prepareStatement(String)
 // PreparedStatement : DB에 적용할 수 있는 미리 준비된 SQL문 인터페이스, .executeUpdate() : insert update delete, .executeQuery() : update
 // ResultSet : PreparedStatement.executeQuery() 함수로 반환되는 테이블 형식 데이터 인터페이스, .next(), .getString(필드명), .getInt(필드명) 등
@@ -136,4 +133,20 @@ public class MemberDAO { // MemberDAO 클래스 시작
         } // try-catch 끝
         return false; // try 코드블록에서 예외 발생시 예외로 인해 함수 실패 -> false값 반환
     } // memberUpdate() 함수 끝
+
+    // 상세 글 보기에서 작성자 이름 찾기
+    public String findName(int writerMno) {
+        try {
+            String sql = "select mname from member where mno = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setInt(1,writerMno);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                return rs.getString("mname");
+            } else {return "deletedUser";}
+        } catch (SQLException e) {
+            System.out.println(">>이름 찾기 오류 : " +e);;
+        }
+        return "";
+    }
 }

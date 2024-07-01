@@ -10,8 +10,14 @@ public class MemberView { // class start // MemberView 클래스명, 파일 이�
 
     // 해당 클래스 함수들을 다른 데서 호출할 수 있도록 static 객체 생성 및 mView 변수명으로 저장
     public static MemberView mView = new MemberView(); // static은 프로그램 실행 시 바로 실행되어 메소드 메모리에 저장, 다른 class에서 호출가능
-
-    //멤버변수 : Scanner 클래스 입력객체를 새로 만들어 주소값을 scan 변수명으로 저장
+        // static 선언시점 : 프로그램 시작시, static 사라짐 : 프로그램 종료시
+        // 메소드를 실행하려면 객체 필요
+        // 객체마다 메소드 실행하지만 코드 공유, 멤버변수는 객체마다 할당
+        // -> 전역 객체 생성, 모든 곳에서 호출할 수 있는 객체 1개
+    private MemberView(){};
+        // 싱글톤 패턴 (프로그램 내 전역객체를 자체 1개만 생성)
+        // private 생성자 : 외부 클래스에서 생성 불가 -> 다른 클래스에서 new 사용불가
+     //멤버변수 : Scanner 클래스 입력객체를 새로 만들어 주소값을 scan 변수명으로 저장
     Scanner scan = new Scanner(System.in); // Scanner(System.in) : 키보드 입력값을 받을 수 있는 Scanner 객체
 
     //0. 초기화면 함수

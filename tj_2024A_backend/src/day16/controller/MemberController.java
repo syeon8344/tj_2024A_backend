@@ -10,6 +10,10 @@ public class MemberController { // MemberController class 시작
     public static int loginMno = 0;
     // 해당 클래스 함수들을 다른 데서 호출할 수 있도록 static 객체 생성 및 memController 변수명으로 주소값 저장
     public static MemberController memController = new MemberController();
+    // 상세 글 보기 메뉴에 작성자 이름 찾기
+    public static String getMemberName(int writerMNo) {
+        return MemberDAO.mDAO.findName(writerMNo);
+    }
 
     //1. 회원가입 화면 함수
     public boolean signUp(MemberDTO memberDTO){

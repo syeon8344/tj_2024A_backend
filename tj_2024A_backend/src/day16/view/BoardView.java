@@ -1,8 +1,11 @@
 package day16.view; //day16 폴더의 view 폴더/패키지에 위치, MemberView에서 로그인시 넘어오고 로그아웃,회원정보수정,회원탈퇴,게시판 메뉴
 
+import day16.controller.BoardController;
 import day16.controller.MemberController; //day16 폴더의 controller폴더/패키지의 MemberController 클래스 불러오기
+import day16.model.DTO.BoardDTO;
 // logOut() 함수 사용을 위해
 
+import java.util.ArrayList;
 import java.util.Scanner; // JAVA의 util 라이브러리의 Scanner 클래스 불러오기 : 키보드 입력 받기 위해
 
 public class BoardView { // BoardView 클래스 시작
@@ -12,7 +15,7 @@ public class BoardView { // BoardView 클래스 시작
 
     //멤버변수 : 입력객체 생성 및 주소값을 scan 변수명으로 저장
     Scanner scan = new Scanner(System.in); // static은 프로그램 실행 시 바로 실행되어 메소드 메모리에 저장, 다른 class에서 호출가능
-
+    ArrayList<BoardDTO> bDTOList;
     //0. 초기화면 함수
     public void index(){ // index() 함수 시작
         while(true){ // 무한루프 시작
@@ -31,7 +34,7 @@ public class BoardView { // BoardView 클래스 시작
                         return; // 탈퇴 성공 및 원래 위치로 이동 : MemberView의 무한루프 내부로 : 메인메뉴로 돌아간다
                     } // memberDelete() if문 끝
                 } // else if (ch==3) 끝
-                else if (ch==4){ //ch=4일시 게시판
+                else if (ch==4){ //ch=4일시 게시판 전체출력
                     boardPrint(); // 게시판 전체 출력 함수
                 } // else if (ch==4) 끝
                 else { System.out.println(">>기능이 없는 번호입니다"); } // 1234 외의 정수 입력시 else로 빠지며 문구 출력
@@ -82,7 +85,79 @@ public class BoardView { // BoardView 클래스 시작
 
     //4. 게시판(게시글전체출력) 함수
     public void boardPrint(){ // boardPrint() 함수 시작
-        System.out.println("=================== 게시판 ==================="); // 게시판 형식 콘솔 출력?
-
+        System.out.println("======================= 게시판 ======================="); // 게시판 형식 콘솔 출력?
+        System.out.println("글번호    제목        작성일                조회수");
+        bDTOList = BoardController.getInstance().boardPrint();
+        if (bDTOList != null) {
+            bDTOList.forEach(bDTO -> {System.out.printf("%d\t\t%s\t\t%s\t\t%d\n", // 리스트객체명.foreEach(반복대입변수명 -> {실행문;});
+                    bDTO.getBno(), bDTO.getBtitle(), bDTO.getBdate(), bDTO.getBview() );
+            });
+        }
+        System.out.print(">>0.글쓰기 1~.개별글조회 : "); int ch = scan.nextInt();
+        if (ch == 0){ boardWrite();}
+        else if (ch >= 1) { boardView(ch);}
     } // boardPrint() 함수 끝
+
+    //5. 게시물 쓰기 함수
+    public void boardWrite(){
+        scan.nextLine();
+        System.out.print(">>제목을 입력해주세요 : "); String bTitle = scan.nextLine();
+        System.out.print(">>내용을 입력해주세요 : "); String bContent = scan.nextLine();
+        BoardDTO bDTO = new BoardDTO();
+        bDTO.setBtitle(bTitle); bDTO.setBcontent(bContent);
+        if (BoardController.getInstance().boardWrite(bDTO)){
+            System.out.println(">>작성 완료.");
+        } else {
+            System.out.println(">>작성 실패.");}
+    }
+    //6. 게시물 개별조회 함수
+    public void boardView(int bNo){
+        BoardDTO result = BoardController.getInstance().boardView(bNo); // 게시물 BoardDTO 객체로 가져오기
+        if (result != null) { // 해당 bNo를 가진 게시물이 있다
+            String mName = MemberController.getMemberName(result.getMno()); // 작성자 이름 가져오기
+            if (mName.equals("deletedUser")) {mName = "탈퇴한 사용자";} // 작성자가 탈퇴한 회원일 시 표현
+            while (true) {
+                System.out.println("제목 : " + result.getBtitle());
+                System.out.print("작성자 : " + mName + " | ");
+                System.out.println("조회수 : " + result.getBview());
+                System.out.println("작성일 : " + result.getBdate());
+                System.out.println("내용 : " + result.getBcontent());
+                System.out.print(">>1.돌아가기 2.글 삭제(본인이 작성한 글일 시) 3.글 수정(본인이 작성한 글일 시)");
+                int ch = scan.nextInt();
+                if (ch == 1) {
+                    boardPrint();
+                } else if (ch == 2) {
+                    boardDelete(bNo);
+                } else if (ch == 3) {
+                    boardEdit(bNo);
+                } else {
+                    System.out.println(">>입력이 잘못되었습니다.");
+                }
+            }
+        }
+        System.out.println(">>글 번호를 찾을 수 없습니다.");
+        boardPrint();
+    }
+    //7. 게시물 삭제 함수
+    public void boardDelete(int bNo){
+        if (BoardController.getInstance().boardDelete(bNo)){
+            System.out.println(">>글 삭제 완료.");
+            boardPrint();
+        } else {
+            System.out.println(">>글 삭제 권한이 없습니다.");
+        }
+    }
+    //8. 게시물 수정 함수
+    private void boardEdit(int bNo) {
+        if(BoardController.getInstance().boardEditCheck(bNo)){
+            scan.nextLine();
+            System.out.print(">>새로운 글 제목 : "); String newTitle = scan.nextLine();
+            System.out.print(">>새로운 글 내용 : "); String newContent = scan.nextLine();
+            BoardDTO bDTO = new BoardDTO();
+            bDTO.setBtitle(newTitle); bDTO.setBcontent(newContent);
+            if (BoardController.getInstance().boardEdit(bNo, bDTO)){
+                System.out.println(">>글 수정 완료.");
+                boardPrint();}
+        } else {System.out.println(">>글 수정 권한이 없습니다.");}
+    }
 } // BoardView 클래스 끝
