@@ -7,6 +7,16 @@ public class BoardDTO { // class 시작
     private int bview;
     private int bno;
     private int mno;
+    //작성자 ID
+    private String mid;
+
+    public String getMid() {
+        return mid;
+    }
+
+    public void setMid(String mid) {
+        this.mid = mid;
+    }
 
     @Override
     public String toString() {

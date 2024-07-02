@@ -3,6 +3,7 @@ package day16.view; //day16 폴더의 view 폴더/패키지에 위치, MemberVie
 import day16.controller.BoardController;
 import day16.controller.MemberController; //day16 폴더의 controller폴더/패키지의 MemberController 클래스 불러오기
 import day16.model.DTO.BoardDTO;
+import day16.model.DTO.ReplyDTO;
 // logOut() 함수 사용을 위해
 
 import java.util.ArrayList;
@@ -86,11 +87,11 @@ public class BoardView { // BoardView 클래스 시작
     //4. 게시판(게시글전체출력) 함수
     public void boardPrint(){ // boardPrint() 함수 시작
         System.out.println("======================= 게시판 ======================="); // 게시판 형식 콘솔 출력?
-        System.out.println("글번호    제목        작성일                조회수");
+        System.out.println("글번호    작성자ID    제목        작성일                조회수");
         bDTOList = BoardController.getInstance().boardPrint();
         if (bDTOList != null) {
-            bDTOList.forEach(bDTO -> {System.out.printf("%d\t\t%s\t\t%s\t\t%d\n", // 리스트객체명.foreEach(반복대입변수명 -> {실행문;});
-                    bDTO.getBno(), bDTO.getBtitle(), bDTO.getBdate(), bDTO.getBview() );
+            bDTOList.forEach(bDTO -> {System.out.printf("%d\t\t%s\t\t%s\t\t%s\t\t%d\n", // 리스트객체명.foreEach(반복대입변수명 -> {실행문;});
+                    bDTO.getBno(), bDTO.getMid(), bDTO.getBtitle(), bDTO.getBdate(), bDTO.getBview() );
             });
         }
         System.out.print(">>0.글쓰기 1~.개별글조회 : "); int ch = scan.nextInt();
@@ -122,14 +123,27 @@ public class BoardView { // BoardView 클래스 시작
                 System.out.println("조회수 : " + result.getBview());
                 System.out.println("작성일 : " + result.getBdate());
                 System.out.println("내용 : " + result.getBcontent());
-                System.out.print(">>1.돌아가기 2.글 삭제(본인이 작성한 글일 시) 3.글 수정(본인이 작성한 글일 시)");
+                // -------- 댓글 출력 ------------
+                System.out.println("============== 댓글 ===============");
+                System.out.println("회원ID    회원이름    댓글내용        작성일");
+                replyPrint(bNo);
+                // -------- /댓글 출력 ------------
+                System.out.print(">>1.돌아가기 2.댓글쓰기 | 권한필요 : 3.글삭제 4.글수정 5.댓글삭제 6.댓글수정 : ");
                 int ch = scan.nextInt();
-                if (ch == 1) {
+                if (ch == 1) { // 개별 글 메뉴
                     boardPrint();
-                } else if (ch == 2) {
-                    boardDelete(bNo);
+                } else if (ch == 2){
+                    replyWrite(bNo);
                 } else if (ch == 3) {
+                    boardDelete(bNo);
+                } else if (ch == 4) {
                     boardEdit(bNo);
+                } else if (ch == 5) {
+                    System.out.println(">>삭제할 댓글을 선택해주세요 : "); int rNo = scan.nextInt();
+                    replyDelete(bNo, rNo);
+                } else if (ch == 6) {
+                    System.out.println(">>수정할 댓글을 선택해주세요 : "); int rNo = scan.nextInt();
+                    replyEdit(bNo, rNo);
                 } else {
                     System.out.println(">>입력이 잘못되었습니다.");
                 }
@@ -138,6 +152,7 @@ public class BoardView { // BoardView 클래스 시작
         System.out.println(">>글 번호를 찾을 수 없습니다.");
         boardPrint();
     }
+
     //7. 게시물 삭제 함수
     public void boardDelete(int bNo){
         if (BoardController.getInstance().boardDelete(bNo)){
@@ -148,7 +163,7 @@ public class BoardView { // BoardView 클래스 시작
         }
     }
     //8. 게시물 수정 함수
-    private void boardEdit(int bNo) {
+    public void boardEdit(int bNo) {
         if(BoardController.getInstance().boardEditCheck(bNo)){
             scan.nextLine();
             System.out.print(">>새로운 글 제목 : "); String newTitle = scan.nextLine();
@@ -159,5 +174,59 @@ public class BoardView { // BoardView 클래스 시작
                 System.out.println(">>글 수정 완료.");
                 boardPrint();}
         } else {System.out.println(">>글 수정 권한이 없습니다.");}
+    }
+    //9. 댓글 출력 함수
+    public void replyPrint(int bNo){ // 현재 보고 있는 글 번호를 매개변수로
+        ArrayList<ReplyDTO> replyList = BoardController.getInstance().replyPrint(bNo); // ReplyDTO 리스트로 댓글을 받는다
+        if (replyList != null && !replyList.isEmpty()) { // null이 아니거나 비어있지 않으면 댓글 출력
+            for (ReplyDTO replyDTO : replyList) {
+                String mName = MemberController.getMemberName(replyDTO.getMno()); // 작성자 이름 가져오기
+                if (mName.equals("deletedUser")) {mName = "탈퇴한 사용자";}
+                System.out.printf("%s\t\t%s\t\t%s\t\t%s\n",
+                        replyDTO.getMid(), mName,
+                        replyDTO.getRcontent(), replyDTO.getRdate());
+            }
+        }
+    }
+    //10. 댓글 쓰기 함수
+    public void replyWrite(int bNo){ // 현재 보고 있는 글 번호를 매개변수로
+        //오픈형 게시판일 때 (로그인 후 댓글쓰기가 아닐 때)
+            //로그인 상태 확인 후 댓글 쓰기 진행
+        //if (!MemberController.memController.loginState();)
+        //BoardController로 ReplyDTO로 포장한 댓글 보내기
+        scan.nextLine(); // 스캐너에 남아있을 수 있는 \n 개행문자를 제거
+        System.out.print(">>댓글 내용을 입력해 주세요 : "); String reply = scan.nextLine(); // 공백도 포함해서 댓글 체크
+        ReplyDTO rDTO = new ReplyDTO();
+        rDTO.setRcontent(reply); rDTO.setBno(bNo);
+        if(BoardController.getInstance().replyWrite(rDTO)){ // 댓글 작성 성공/실패 boolean 리턴값
+            System.out.println(">>댓글 작성 완료.");
+        } else {
+            System.out.println(">>댓글 작성 오류 발생.");
+        }
+    }
+    // 11. 댓글 삭제 함수
+    private void replyDelete(int bNo, int rNo) {
+        ReplyDTO rDTO = new ReplyDTO();
+        rDTO.setBno(bNo); rDTO.setRno(rNo);
+        if(BoardController.getInstance().replyDelete(rDTO)){ // 댓글 작성 성공/실패 boolean 리턴값
+            System.out.println(">>댓글 작성 완료.");
+        } else {
+            System.out.println(">>댓글 작성 오류 발생.");
+        }
+    }
+    // 12. 댓글 수정 함수
+    private void replyEdit(int bNo, int rNo) {
+        ReplyDTO rDTO = new ReplyDTO();
+        rDTO.setBno(bNo); rDTO.setRno(rNo);
+        if (BoardController.getInstance().replyEditCheck(rDTO)) {
+            scan.nextLine();
+            System.out.println(">>새 댓글 내용을 입력해주세요 : "); String newReply = scan.nextLine();
+            rDTO.setRcontent(newReply);
+            if (BoardController.getInstance().replyEdit(rDTO)) { // 댓글 작성 성공/실패 boolean 리턴값
+                System.out.println(">>댓글 수정 완료.");
+            } else {
+                System.out.println(">>댓글 수정 오류 발생.");
+            }
+        }
     }
 } // BoardView 클래스 끝

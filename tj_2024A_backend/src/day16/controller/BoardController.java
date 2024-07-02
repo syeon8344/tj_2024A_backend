@@ -2,8 +2,11 @@ package day16.controller; // day 16 폴더의 controller 폴더/패키지에 있
 
 import day16.model.DAO.BoardDAO;
 import day16.model.DTO.BoardDTO;
+import day16.model.DTO.ReplyDTO;
 
 import java.util.ArrayList;
+
+import static day16.controller.MemberController.loginMno;
 
 public class BoardController { // 현재 파일의 클래스명/제목
     // -------- 싱글톤 패턴 -------- //
@@ -30,19 +33,42 @@ public class BoardController { // 현재 파일의 클래스명/제목
     }
     // 게시판 글쓰기
     public boolean boardWrite(BoardDTO bDTO) {
-        bDTO.setMno(MemberController.loginMno);
+        bDTO.setMno(loginMno);
         return BoardDAO.getInstance().boardWrite(bDTO);
     }
     // 게시판 글 삭제
     public boolean boardDelete(int bNo) {
-        return BoardDAO.getInstance().boardDelete(bNo, MemberController.loginMno);
+        return BoardDAO.getInstance().boardDelete(bNo, loginMno);
     }
     // 게시판 글 수정 권한 확인
     public boolean boardEditCheck(int bNo) {
-        return BoardDAO.getInstance().boardEditCheck(bNo,MemberController.loginMno);
+        return BoardDAO.getInstance().boardEditCheck(bNo, loginMno);
     }
     // 게시판 글 수정
     public boolean boardEdit(int bNo, BoardDTO bDTO) {
         return BoardDAO.getInstance().boardEdit(bNo, bDTO);
+    }
+    // 개별 글당 댓글 출력
+    public ArrayList<ReplyDTO> replyPrint(int bNo) {
+        return BoardDAO.getInstance().replyPrint(bNo);
+    }
+    // 개별 글에서 댓글 달기
+    public boolean replyWrite(ReplyDTO reply) {
+        reply.setMno(loginMno); // 현재 로그인된 회원 정보 추가
+        return BoardDAO.getInstance().replyWrite(reply);
+    }
+    // 댓글 삭제
+    public boolean replyDelete(ReplyDTO rDTO) {
+        rDTO.setMno(loginMno);
+        return BoardDAO.getInstance().replyDelete(rDTO);
+    }
+    // 댓글 수정 권한 확인 (본인 여부)
+    public boolean replyEditCheck(ReplyDTO rDTO) {
+        rDTO.setMno(loginMno);
+        return BoardDAO.getInstance().replyEditCheck(rDTO);
+    }
+    // 댓글 수정
+    public boolean replyEdit(ReplyDTO rDTO) {
+        return BoardDAO.getInstance().replyEdit(rDTO);
     }
 } // class 끝
