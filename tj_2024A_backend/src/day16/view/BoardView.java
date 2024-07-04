@@ -94,8 +94,9 @@ public class BoardView { // BoardView 클래스 시작
                     bDTO.getBno(), bDTO.getMid(), bDTO.getBtitle(), bDTO.getBdate(), bDTO.getBview() );
             });
         }
-        System.out.print(">>0.글쓰기 1~.개별글조회 : "); int ch = scan.nextInt();
-        if (ch == 0){ boardWrite();}
+        System.out.print(">>-1.제목검색 0.글쓰기 1~.개별글조회 : "); int ch = scan.nextInt();
+        if (ch == -1){titleSearch();}
+        else if (ch == 0){ boardWrite();}
         else if (ch >= 1) { boardView(ch);}
     } // boardPrint() 함수 끝
 
@@ -151,6 +152,16 @@ public class BoardView { // BoardView 클래스 시작
         }
         System.out.println(">>글 번호를 찾을 수 없습니다.");
         boardPrint();
+    }
+    // 제목 검색 함수
+    public void titleSearch(){
+        System.out.print(">>검색할 키워드를 입력해 주세요 : "); String targetTitle = scan.next();
+        ArrayList<BoardDTO> bDTOList = BoardController.getInstance().titleSearch(targetTitle);
+        if (bDTOList != null){
+            System.out.println(">>검색결과 : ");
+            bDTOList.forEach(bDTO -> {System.out.printf("%d\t\t%s\t\t%s\t\t%s\t\t%d\n", // 리스트객체명.foreEach(반복대입변수명 -> {실행문;});
+                    bDTO.getBno(), bDTO.getMid(), bDTO.getBtitle(), bDTO.getBdate(), bDTO.getBview());});
+        }
     }
 
     //7. 게시물 삭제 함수

@@ -71,4 +71,8 @@ public class BoardController { // 현재 파일의 클래스명/제목
     public boolean replyEdit(ReplyDTO rDTO) {
         return BoardDAO.getInstance().replyEdit(rDTO);
     }
+    // 제목 찾기 함수
+    public ArrayList<BoardDTO> titleSearch(String targetTitle) {
+        return BoardDAO.getInstance().titleSearch(targetTitle);
+    }
 } // class 끝

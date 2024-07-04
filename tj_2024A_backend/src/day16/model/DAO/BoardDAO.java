@@ -33,7 +33,7 @@ public class BoardDAO { //BoardDAO 클래스 시작
     public ArrayList<BoardDTO> boardPrint(){
         try {
             ArrayList<BoardDTO> bDTOList = new ArrayList<>();
-            String sql = "select * from board b inner join member m on b.mno = m.mno;";
+            String sql = "select * from board b inner join member m on b.mno = m.mno order by bno desc;";
             ps = conn.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()){ // rs에 들어있는 테이블 데이터를 레코드마다 boardDTO로 포장해 ArrayList에 담기
@@ -50,7 +50,28 @@ public class BoardDAO { //BoardDAO 클래스 시작
         }
         return null; // 글이 없을 때
     }
-
+    // 4-1. 제목 찾기 함수
+    public ArrayList<BoardDTO> titleSearch(String targetTitle) {
+        ArrayList<BoardDTO> bDTOList = new ArrayList<>();
+        try {
+            // String sql = "select * from board b inner join member m on b.mno = m.mno where btitle like ?;";
+            String sql = "select * from board b inner join member m on b.mno = m.mno where btitle like CONCAT('%', ?, '%')";
+            // CONCAT(문자열, 문자열, 문자열) = JAVA) str + str + str
+            // sql like문 : '%제%' = O | '%?%' = X (파라미터 인식 X) | ?, %+param+% = O | '%"+targetTitle+"%' = O | %?% = X
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, targetTitle);
+            rs = ps.executeQuery();
+            while (rs.next()){
+                BoardDTO bDTO = new BoardDTO();
+                bDTO.setBno(rs.getInt(5)); bDTO.setMid(rs.getString(7)); bDTO.setBtitle(rs.getString(1)); bDTO.setBdate(rs.getString(3)); bDTO.setBview(rs.getInt(4));
+                bDTOList.add(bDTO);
+            }
+        } catch (Exception e){
+            System.out.println(">>제목 검색 오류 : " +e);
+            System.out.println("ps = " + ps.toString());
+        }
+        return bDTOList;
+    }
     // 6. 게시글 개별조회 함수
     public BoardDTO boardView(int bNo) {
         try {
@@ -246,4 +267,6 @@ public class BoardDAO { //BoardDAO 클래스 시작
         }
         return false;
     }
+
+
 } // BoardDAO 끝

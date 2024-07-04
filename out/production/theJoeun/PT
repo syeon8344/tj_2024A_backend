@@ -25,23 +25,21 @@ create table weightrecord(
 );
 
 create table atefoodrecord(
-	ateFoodCode int auto_increment,
-    foodCode int,
-    ateTime datetime default now(),
-    memberCode int,
-    primary key (ateFoodCode),
-    foreign key (foodCode) references food(foodCode),
-    foreign key (memberCode) references member(memberCode)
+	ateFoodCode
+    foodCode(fk)
+    ateTime
+    memberCode(fk)
+    foreign key (sentMCode) references member(memberCode),
+    foreign key (sentMCode) references member(memberCode),
 );
 
 create table workoutrecord(
-	workOutCode int auto_increment,
-    exCode
+	workOutCode
+    exCode(fk)
     workOutTime
-    memberCode
-    primary key (workOutCode),
-    foreign key (sentMCode) references member(memberCode),
-    foreign key (sentMCode) references member(memberCode)
+    memberCode(fk)
+    foreign key (exCode) references exercise(exCode),
+    foreign key (memberCode) references member(memberCode),
 );
 
 create table food(
@@ -52,11 +50,11 @@ create table food(
 );
 
 create table exercise (
-	exCode int auto_increment,
+	exCode(pk)
     exName	
 	exKcal
     exIntensity
-    primary key (exCode)
+    primary key (foodCode)
 );
 
 create table message (
