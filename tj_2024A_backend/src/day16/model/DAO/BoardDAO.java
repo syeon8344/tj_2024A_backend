@@ -10,8 +10,7 @@ public class BoardDAO { //BoardDAO 클래스 시작
 
     // 싱글톤 패턴
     private static BoardDAO bDAO = new BoardDAO(); // private static 객체 생성
-    private BoardDAO(){}; // 다른 클래스에서 생성 막기
-    public static BoardDAO getInstance(){
+    private BoardDAO(){ // 다른 클래스에서 생성 막기
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(
@@ -20,8 +19,10 @@ public class BoardDAO { //BoardDAO 클래스 시작
         } catch(Exception e){
             System.out.println(">>BoardDAO 오류 : " + e);
         }
-        return bDAO;
-    }; // private static 객체 불러오기 함수
+    };
+    // private static 객체 불러오기 함수
+    public static BoardDAO getInstance(){return bDAO;};
+
     // /싱글톤 패턴
 
     // JDBC 인터페이스들

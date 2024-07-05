@@ -1,0 +1,46 @@
+java 프로젝트를 exe실행파일로 만들기
+    [.JAR 추출]
+    1. IntelliJ 메뉴 > 파일 > 프로젝트 구조
+    2. 아티팩트 메뉴 > 추가 (+) > JAR > 종속요소 포함 모듈
+    4. 모듈 : 프로젝트 폴더명, 메인 클래스 (main함수가 포함된 클래스)
+    5. 출력디렉토리 설정 후 메뉴 > 빌드 > 아티팩트 빌드
+
+    [현재 운영체제 JAVA 설치 / 확인]
+        cmd -> java -version
+
+    [.JAR -> .EXE]
+    https://launch4j.sourceforge.net/
+        launch4j
+            - basic
+                1. output file - 변환후 파일 위치
+            - header
+                1. header type = console
+            - jre
+                1. min version = 1.8
+            - 상단 설정 메뉴
+                1. config save 위치 (설정 재사용할때)
+
+    [서버호스팅]
+    1. 개인서버
+
+    2. 카페24
+
+    3. AWS
+
+    프로젝트 기본 설정
+        MVC 패키지들 + AppStart(main)
+            - 빈 폴더는 git에 올라가지 않는다
+            - 프로젝트에서 1차적으로 쓸 클래스들 생성
+        src -> etc
+            MySQL 라이브러리 파일
+            샘플 포함된 sql 코드
+
+    최초 커밋/푸시
+        1. 메뉴 > VCS > GitHub에 프로젝트 공유 (공개)
+        2. 초기 커밋 후 웹에서 커밋 상태 확인
+            - 초대 : 웹 리포 Settings > 사이드메뉴 collaborators > add people > 초대이메일
+                + kgs2072@naver.com
+
+    브랜치 상태 최신화 -> 페치
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
